@@ -2,7 +2,7 @@
 
 Version: 0.1  
 Last updated: 2025-12-26 
-Author: Dean <dean@example.com> (GitHub: newkirkdean-hub)
+Author: Dean <newkirkdean@gmail.com> (GitHub: newkirkdean-hub)
 
 Change log:
 - 2025-12-26 — initial v0.1 — added ALL_CAPS convention and clarified Git branches
