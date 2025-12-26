@@ -1,3 +1,4 @@
+```markdown
 # KIDSCLUB Migration Context & Working Notes
 
 Version: 0.1  
@@ -5,14 +6,14 @@ Last updated: 2025-12-26
 Author: <Dean>
 
 ## Purpose / top-level overview
-- "Kidsclub" is a small, local network Java/FX program that reads/writes a Microsoft Access DB for managing customer records, invoices, time clock, inventory, sales, maintenance, and simple reporting. 
+- "KIDSCLUB" is a small, local network Java/FX program that reads/writes a Microsoft Access DB for managing customer records, invoices, time clock, inventory, sales, maintenance, and simple reporting.[...]
 
 ## Overall goal 
-- To migrate "Kidsclub" to a local network web service + PostgreSQL while keeping user functionality and appearance as close to the same as is current. Migrate corp2 into same source files as the rest of the source files called counterFX which is in the Top-level program called "Kidsclub".
+- To migrate "KIDSCLUB" to a local network web service + PostgreSQL while keeping user functionality and appearance as close to the same as is current. Migrate corp2 into same source files as the rest[...]
 
 ## Names
-- Top Level program will be referred to as "KIDSCLUB", this is the all-inclusive program of the two branches "COUNTERFX" and "CORP2"
-- COUNTERFX and CORP2 will be referred to as Branches as I have renamed two branches under the Master Branch.
+- Top-level program will be referred to as KIDSCLUB; this is the all-inclusive program of the two branches COUNTERFX and CORP2.
+- COUNTERFX and CORP2 will be referred to as branches (Git branches); I renamed two branches under the master Git branch. For reference, when I ask you to look at a file in COUNTERFX, that means look in the git branch titled COUNTERFX.
 - Other folders under the COUNTERFX branch will be referred to as sub-folder. 
 Example, "please read the file Games.FXML in sub-folder GAMES.
 - Most of this Naming is for the owners needs so he can communicate to you. 
@@ -24,12 +25,12 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 ## How to run the existing app (short)
 - JDK version:
 - Build command: `./ANT`
-- Run command: `java -jar Local-Jar-Files/corp2/dist/corp2.jar' AND java -jar Local-Jar-Files/counterFX/dist/counterFX.jar'
+- Run command: `java -jar Local-Jar-Files/corp2/dist/corp2.jar` AND `java -jar Local-Jar-Files/counterFX/dist/counterFX.jar`
 
 ## Important source files & entry points
-- Main class: counterFX AND corp2 (2 programs, counterFX is mostly dependant on FX and corp2 is swing 
+- Main class: COUNTERFX and CORP2 (two programs; COUNTERFX is mostly dependent on JavaFX and CORP2 uses Swing)
 - Data access: src/.../AccessDataRepository.java (reads .mdb via UCanAccess)
-- UI / forms: There are two main forms in counterFX called "counter" and "Main". Corp two's main form is "Corpform_Main2".
+- UI / forms: There are two main forms in COUNTERFX called "counter" and "Main". CORP2's main form is "Corpform_Main2".
 
 ## High-level data model
 - Number of tables: 38
@@ -46,7 +47,7 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
   - Rows (est): 20,000 - 50,000 in 4 month period, we clean the detail records once they exceed 40,000+
   - Usage: read-heavy; Most writes/day of all tables
   - Sensitive columns: Member ID (Keyed To Members), 
-  - Tables MEMBERS and MEMTICK both must balance. MEMBERS has a single field Balance which is the total added and subtracted of all the detail. These are the only tables that must stay balanced like this.
+  - Tables MEMBERS and MEMTICK both must balance. MEMBERS has a single field Balance which is the total added and subtracted of all the detail. These are the only tables that must stay balanced like t[...]
 
 
 (For full data dictionary use docs/DATA_DICTIONARY.md)
@@ -57,10 +58,10 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## Known bugs / oddities
 - Currently the only consistent issue is dropping the connection to the tables. (Network issue) Solved with Database and code stored in same location.
-- Because we clean the tables after 40,000+ records in the Detail and through them into a history table that only get used maybe once a month we have stopped the tables from breaking and having to repair them.
+- Because we clean the tables after 40,000+ records in the Detail and through them into a history table that only get used maybe once a month we have stopped the tables from breaking and having to rep[...]
 
 ## Security & compliance (summary)
-- Because we run only on a local network security is very simple at this time. We only use a valid user number that they type in and if valid in the database then they can use the system. Some users are a higher level user but that is based on their user number in the database.
+- Because we run only on a local network security is very simple at this time. We only use a valid user number that they type in and if valid in the database then they can use the system. Some users a[...]
 
 
 ## Migration priorities and constraints
