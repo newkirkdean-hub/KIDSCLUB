@@ -1,0 +1,87 @@
+# KIDSCLUB Migration Context & Working Notes
+
+Version: 0.1  
+Last updated: 2025-12-26 
+Author: <Dean>
+
+## Purpose / top-level overview
+- "Kidsclub" is a small, local network Java/FX program that reads/writes a Microsoft Access DB for managing customer records, invoices, time clock, inventory, sales, maintenance, and simple reporting. 
+
+## Overall goal 
+- To migrate "Kidsclub" to a local network web service + PostgreSQL while keeping user functionality and appearance as close to the same as is current. Migrate corp2 into same source files as the rest of the source files called counterFX which is in the Top-level program called "Kidsclub".
+
+## Names
+- Top Level program will be referred to as "KIDSCLUB", this is the all-inclusive program of the two branches "COUNTERFX" and "CORP2"
+- COUNTERFX and CORP2 will be referred to as Branches as I have renamed two branches under the Master Branch.
+- Other folders under the COUNTERFX branch will be referred to as sub-folder. 
+Example, "please read the file Games.FXML in sub-folder GAMES.
+- Most of this Naming is for the owners needs so he can communicate to you. 
+
+## Where the Access DB lives (non-secret pointer)
+- File path (local/dev): /**-NET-DRIVE/clubdb
+- Shared location on local computer in our office, backup copies are on owners home computer and owner will provide table descriptions in text format.
+
+## How to run the existing app (short)
+- JDK version:
+- Build command: `./ANT`
+- Run command: `java -jar Local-Jar-Files/corp2/dist/corp2.jar' AND java -jar Local-Jar-Files/counterFX/dist/counterFX.jar'
+
+## Important source files & entry points
+- Main class: counterFX AND corp2 (2 programs, counterFX is mostly dependant on FX and corp2 is swing 
+- Data access: src/.../AccessDataRepository.java (reads .mdb via UCanAccess)
+- UI / forms: There are two main forms in counterFX called "counter" and "Main". Corp two's main form is "Corpform_Main2".
+
+## High-level data model
+- Number of tables: 38
+- Most important tables: Members, Inventory, Timeclock, Sales, Emails, Member Mail. 
+
+## Table-level notes (short per-table summary)
+- Table name: Members
+  - Rows (Current): 20,000 (100 new Members per Month avg.)
+  - Usage: read-heavy; few writes/day
+  - Sensitive columns: Member Number, Member ID, 
+  - Migration note: preserve autonumber customer_id; emails have some NULLs; create unique index on email after cleanup.
+
+- Table name: Memtick
+  - Rows (est): 20,000 - 50,000 in 4 month period, we clean the detail records once they exceed 40,000+
+  - Usage: read-heavy; Most writes/day of all tables
+  - Sensitive columns: Member ID (Keyed To Members), 
+  - Tables MEMBERS and MEMTICK both must balance. MEMBERS has a single field Balance which is the total added and subtracted of all the detail. These are the only tables that must stay balanced like this.
+
+
+(For full data dictionary use docs/DATA_DICTIONARY.md)
+
+## Current business logic implemented outside DB
+- All Queries are run from code none are stored or run from the MSACCESS Database.
+- Reports: "Reports will be the last thing tackled".
+
+## Known bugs / oddities
+- Currently the only consistent issue is dropping the connection to the tables. (Network issue) Solved with Database and code stored in same location.
+- Because we clean the tables after 40,000+ records in the Detail and through them into a history table that only get used maybe once a month we have stopped the tables from breaking and having to repair them.
+
+## Security & compliance (summary)
+- Because we run only on a local network security is very simple at this time. We only use a valid user number that they type in and if valid in the database then they can use the system. Some users are a higher level user but that is based on their user number in the database.
+
+
+## Migration priorities and constraints
+- Priority 1: Keep feel and look and functionality very similar. (CSS files)
+- Priority 2: Migrate in sections (This is one large program with many sub folders / programs)
+- Data volume estimate: 1.5 MB total
+- Owner has full working system at home to test changes before implementing them in the Office Server. 
+- There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
+
+## Contacts
+- Owner: <Dean> (github: newkirkdean-hub)
+- Other contributors: none
+
+## How to use this file with the assistant
+- When you want me to review/update context, either:
+  - Paste the changed sections into chat; or
+  - Tell me to "Please read CORP2_CONTEXT.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository.
+- Keep "Last updated" current so I know which version to use.
+
+## Next steps (example)
+1. Fill docs/DATA_DICTIONARY.md with full column lists and row counts.
+2. Create docs/MIGRATION_PLAN.md with per-table migration approach.
+3. Add docs/SECURITY.md with roles and encryption/backups policy.
+<img width="925" height="1666" alt="image" src="https://github.com/user-attachments/assets/0953f8a9-071c-46e9-97e8-906715851ec9" />
