@@ -73,6 +73,11 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 - Owner has full working system at home to test changes before implementing them in the Office Server. 
 - There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
 
+## Local Office Network
+- Topology is Peir to Peir connected thru Cat Cabling 
+- 1 Windows stores all files
+- 13 Windows User, 1 Mac User, 1 Windows Tablet.
+
 ## Contacts
 - Owner: Dean <dean@example.com> (github: newkirkdean-hub)
 - Other contributors: NONE
