@@ -1,0 +1,47 @@
+name: Update Last Updated Header
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'KIDSCLUB Migration Context & Working Notes.md'
+
+jobs:
+  update-last-updated:
+    # avoid running when the commit/actor is the actions bot (prevents loop)
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set DATE environment variable (UTC YYYY-MM-DD)
+        run: echo "DATE=$(date -u +%F)" >> $GITHUB_ENV
+
+      - name: Update Last updated header and commit if changed
+        run: |
+          FILE='KIDSCLUB Migration Context & Working Notes.md'
+
+          # Replace the line starting with 'Last updated:' with the current date
+          if grep -q "^Last updated:" "$FILE"; then
+            perl -0777 -pe "s/^Last updated:.*$/Last updated: $DATE/m" -i "$FILE"
+          else
+            # If the file doesn't have the line, insert it after the Version line
+            awk -v d="$DATE" 'BEGIN{inserted=0} {print} /^Version:/ && !inserted {print "Last updated: " d; inserted=1}' "$FILE" > /tmp/updated && mv /tmp/updated "$FILE"
+          fi
+
+          # Configure git and only commit/push if there are changes
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if ! git diff --quiet -- "$FILE"; then
+            git add "$FILE"
+            # commit message marks this as automated so it's easy to spot
+            git commit -m "chore: update 'Last updated' header to $DATE [auto-update]"
+            git push origin HEAD:master
+          else
+            echo "No update required"
+          fi
