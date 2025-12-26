@@ -75,7 +75,7 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## Contacts
 - Owner: Dean <dean@example.com> (github: newkirkdean-hub)
-- Other contributors: none
+- Other contributors: NONE
 
 ## How to use this file with the assistant
 - When you want me to review/update context, either:
