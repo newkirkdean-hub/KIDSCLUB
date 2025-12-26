@@ -1,4 +1,3 @@
-```markdown
 # KIDSCLUB Migration Context & Working Notes
 
 Version: 0.1  
