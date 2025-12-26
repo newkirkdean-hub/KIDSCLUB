@@ -2,7 +2,10 @@
 
 Version: 0.1  
 Last updated: 2025-12-26 
-Author: <Dean>
+Author: Dean <dean@example.com> (GitHub: newkirkdean-hub)
+
+Change log:
+- 2025-12-26 — initial v0.1 — added ALL_CAPS convention and clarified Git branches
 
 ## Purpose / top-level overview
 - "KIDSCLUB" is a small, local network Java/FX program that reads/writes a Microsoft Access DB for managing customer records, invoices, time clock, inventory, sales, maintenance, and simple reporting.[...]
@@ -71,7 +74,7 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 - There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
 
 ## Contacts
-- Owner: <Dean> (github: newkirkdean-hub)
+- Owner: Dean <dean@example.com> (github: newkirkdean-hub)
 - Other contributors: none
 
 ## How to use this file with the assistant
