@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-10-21T20:31:20</date>
+  <millis>1697941880604</millis>
+  <sequence>0</sequence>
+  <logger>commoncodes.ClubFunctions</logger>
+  <level>INFO</level>
+  <class>commoncodes.ClubFunctions</class>
+  <method>log</method>
+  <thread>11</thread>
+  <message>java.net.ConnectException: Connection timed out: connect
+LAPTOP-OD93PHJD/192.168.0.4
+IP=192.168.0.3PORT= 5056</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-10-21T20:32:32</date>
+  <millis>1697941952555</millis>
+  <sequence>0</sequence>
+  <logger>commoncodes.ClubFunctions</logger>
+  <level>INFO</level>
+  <class>commoncodes.ClubFunctions</class>
+  <method>log</method>
+  <thread>11</thread>
+  <message>java.net.ConnectException: Connection timed out: connect
+LAPTOP-OD93PHJD/192.168.0.4
+IP=192.168.0.3PORT= 5056</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-10-21T21:27:13</date>
+  <millis>1697945233392</millis>
+  <sequence>0</sequence>
+  <logger>commoncodes.ClubFunctions</logger>
+  <level>INFO</level>
+  <class>commoncodes.ClubFunctions</class>
+  <method>log</method>
+  <thread>11</thread>
+  <message>java.net.ConnectException: Connection timed out: connect
+LAPTOP-OD93PHJD/192.168.0.4
+IP=192.168.0.3PORT= 5056</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-10-21T21:32:20</date>
+  <millis>1697945540416</millis>
+  <sequence>0</sequence>
+  <logger>commoncodes.ClubFunctions</logger>
+  <level>INFO</level>
+  <class>commoncodes.ClubFunctions</class>
+  <method>log</method>
+  <thread>11</thread>
+  <message>java.net.ConnectException: Connection timed out: connect
+LAPTOP-OD93PHJD/192.168.0.4
+IP=192.168.0.3PORT= 5056</message>
+</record>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="717.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.EditBalancePopUpController">
+   <children>
+      <Button fx:id="cancelButton" layoutX="231.0" layoutY="523.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Cancel (ESC)" />
+      <Button fx:id="printButton" layoutX="43.0" layoutY="523.0" mnemonicParsing="false" onAction="#printButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Save F6" />
+      <Label layoutX="43.0" layoutY="45.0" prefHeight="54.0" prefWidth="206.0" text="Transfer From Account" />
+      <TextArea fx:id="notesTF" layoutX="43.0" layoutY="320.0" prefHeight="185.0" prefWidth="426.0" wrapText="true" />
+      <Label layoutX="43.0" layoutY="289.0" prefHeight="31.0" prefWidth="219.0" text="Reason for Balance Change" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <TextField fx:id="addedTF" layoutX="256.0" layoutY="163.0" prefHeight="31.0" prefWidth="153.0" />
+      <Label layoutX="43.0" layoutY="151.0" prefHeight="54.0" prefWidth="206.0" text="Tickets Being Added" />
+      <TextField fx:id="subtractedTF" layoutX="256.0" layoutY="225.0" prefHeight="31.0" prefWidth="153.0" />
+      <Label layoutX="43.0" layoutY="213.0" prefHeight="54.0" prefWidth="206.0" text="Tickets Being Subtracted" />
+      <Label fx:id="transferToNameLabel" layoutX="37.0" layoutY="105.0" prefHeight="31.0" prefWidth="261.0" />
+      <Pane fx:id="errorPane" layoutY="610.0" prefHeight="83.0" prefWidth="512.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="31.0" prefHeight="83.0" prefWidth="467.0" text="Label" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="transferFromBalance" layoutX="298.0" layoutY="105.0" prefHeight="31.0" prefWidth="135.0" />
+      <PasswordField fx:id="accountNumberTF" layoutX="256.0" layoutY="57.0" prefHeight="31.0" prefWidth="153.0" />
+   </children>
+</AnchorPane>

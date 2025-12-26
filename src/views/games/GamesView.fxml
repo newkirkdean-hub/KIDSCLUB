@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="678.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.games.GamesViewController">
+   <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="300.0" layoutX="45.0" layoutY="22.0" stroke="BLACK" strokeType="INSIDE" styleClass="altRecBox" width="266.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <GridPane fx:id="gridPane1" layoutX="52.0" layoutY="23.0" prefHeight="293.0" prefWidth="243.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="102.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="141.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Game Number" />
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Purchase Date" GridPane.rowIndex="6" />
+                  <Label layoutX="10.0" layoutY="15.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Game Name" GridPane.rowIndex="1" />
+                  <TextField fx:id="gameNameTextfield" layoutX="132.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Location" GridPane.rowIndex="2" />
+                  <TextField fx:id="locationTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="155.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="departmentTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="secondDepartmentTextfield" layoutX="132.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="91.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Department" GridPane.rowIndex="3" />
+                  <Label layoutX="10.0" layoutY="129.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="2ND Depart" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="185.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Vendor" GridPane.rowIndex="5" />
+                  <TextField fx:id="vendorTextfield" layoutX="132.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="gameNumberTextfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor></TextField>
+                  <DatePicker fx:id="purchaseDateTextfield" prefHeight="25.0" prefWidth="154.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+      <Pane layoutX="45.0" layoutY="334.0" prefHeight="250.0" prefWidth="673.0" styleClass="recBox">
+         <children>
+                  <TableView fx:id="gameDetailTable" editable="true" focusTraversable="false" onMouseClicked="#getTableRow" prefHeight="248.0" prefWidth="673.0">
+                     <columns>
+                        <TableColumn fx:id="gameDateColumn" prefWidth="98.0" text="Date" />
+                        <TableColumn fx:id="gameSalesColumn" prefWidth="109.0" text="Sales" />
+                        <TableColumn fx:id="gameCoinMeterColumn" prefWidth="142.0" text="  Coin Meter  " />
+                        <TableColumn fx:id="gameTicketMeterColumn" prefWidth="127.0" text="  Ticket Meter  " />
+                        <TableColumn fx:id="gamePrizeMeterColumn" prefWidth="125.0" text="Prize Meter" />
+                        <TableColumn fx:id="gameIDColumn" prefWidth="71.0" resizable="false" text="Tran ID" />
+                     </columns>
+                  </TableView>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="239.0" layoutX="326.0" layoutY="22.0" stroke="BLACK" strokeType="INSIDE" styleClass="recBox" width="224.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <GridPane fx:id="gridPane2" layoutX="332.0" layoutY="28.0" prefHeight="229.0" prefWidth="209.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="recBoxLabel" text="Coin Meter" />
+            <Label styleClass="recBoxLabel" text="Ticket Meter" GridPane.rowIndex="1" />
+            <Label styleClass="recBoxLabel" text="Prize Meter" GridPane.rowIndex="2" />
+            <Label styleClass="recBoxLabel" text="Serial Number" GridPane.rowIndex="3" />
+            <TextField fx:id="coinMeterTextfield" GridPane.columnIndex="1" />
+            <TextField fx:id="ticketMeterTextfield" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="prizeMeterTextfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="serialNumberTextfield" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label styleClass="recBoxLabel" text="Taxable" GridPane.rowIndex="4" />
+            <RadioButton fx:id="taxableRadio" mnemonicParsing="false" prefHeight="17.0" prefWidth="38.0" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="70.0" />
+               </padding></RadioButton>
+         </children>
+      </GridPane>
+      <AnchorPane fx:id="editPane" layoutX="45.0" layoutY="593.0" prefHeight="58.0" prefWidth="673.0" styleClass="editPane">
+         <children>
+            <DatePicker fx:id="editPaneDate" layoutX="7.0" layoutY="8.0" prefHeight="40.0" prefWidth="123.0" />
+            <TextField fx:id="editPaneSales" layoutX="142.0" layoutY="9.0" prefHeight="40.0" prefWidth="99.0" />
+            <TextField fx:id="editPaneCoins" layoutX="252.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+            <TextField fx:id="editPaneTickets" layoutX="357.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+            <TextField fx:id="editPanePrizes" layoutX="464.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+            <Button fx:id="editPaneSave" layoutX="575.0" layoutY="10.0" mnemonicParsing="false" onAction="#editPaneSaveButtonDo" prefHeight="40.0" prefWidth="76.0" text="Save F9" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Pane layoutX="614.0" layoutY="14.0" prefHeight="293.0" prefWidth="104.0">
+         <children>
+            <VBox prefHeight="293.0" prefWidth="104.0" spacing="20.0">
+               <children>
+                        <Button fx:id="newButton" focusTraversable="false" mnemonicParsing="false" onAction="#newGame" prefHeight="40.0" prefWidth="99.0" text="New F6" />
+                        <Button fx:id="searchButton" focusTraversable="false" mnemonicParsing="false" onAction="#LookUpButtonPressed" prefHeight="40.0" prefWidth="99.0" text="Search F7" />
+                        <Button fx:id="printButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="Print F8" />
+                        <Button fx:id="editButton" focusTraversable="false" mnemonicParsing="false" onAction="#editButtonGo" prefHeight="40.0" prefWidth="99.0" text="Edit F9" />
+                        <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="99.0" text="Exit (ESC)" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

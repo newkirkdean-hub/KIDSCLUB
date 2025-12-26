@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="401.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.EmailEditorPopUpController">
+   <children>
+      <Button fx:id="cancelButton" layoutX="100.0" layoutY="323.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Cancel (ESC)" />
+      <Label layoutX="61.0" layoutY="47.0" prefHeight="54.0" prefWidth="166.0" text="Account Number" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <Label fx:id="transferToNameLabel" layoutX="37.0" layoutY="105.0" prefHeight="31.0" prefWidth="404.0" />
+      <Button fx:id="addPinNumberButton" layoutX="100.0" layoutY="264.0" mnemonicParsing="false" onAction="#AddPinNumberButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Add / Edit / Delete Email" />
+      <Label layoutX="54.0" layoutY="140.0" prefHeight="54.0" prefWidth="166.0" text="Email Address" />
+      <PasswordField fx:id="accountNumberTF" layoutX="220.0" layoutY="62.0" prefHeight="31.0" prefWidth="153.0" />
+      <TextField fx:id="newPinNumberTF" alignment="CENTER" layoutX="14.0" layoutY="181.0" prefHeight="54.0" prefWidth="530.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+   </children>
+</AnchorPane>

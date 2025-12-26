@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="881.0" prefWidth="1632.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.CSSEditRController">
+   <children>
+      <TabPane fx:id="tPane" layoutX="45.0" layoutY="23.0" prefHeight="701.0" prefWidth="963.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="gamesTab" onSelectionChanged="#setTabsSelected" text="Games">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="353.0" prefWidth="663.0">
+                     <children>
+                        <VBox fx:id="vboxButtonPane" layoutX="805.0" layoutY="30.0" onDragDetected="#getCpickerColor" prefHeight="327.0" prefWidth="123.0" spacing="20.0">
+                           <children>
+                                    <Button fx:id="newButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="New F6" />
+                                    <Button fx:id="searchButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="Search F7" />
+                                    <Button fx:id="printButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="Print F8" />
+                                    <Button fx:id="editButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="Edit F9" />
+                                    <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="Exit (ESC)" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <Pane fx:id="primaryBox" layoutX="14.0" layoutY="14.0" prefHeight="305.0" prefWidth="305.0">
+                           <children>
+                                    <GridPane fx:id="gridPane1" layoutX="12.0" prefHeight="293.0" prefWidth="267.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="134.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="97.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label prefHeight="28.0" prefWidth="99.0" text="Game Number" />
+                                          <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Purchase Date" GridPane.rowIndex="6" />
+                                          <Label layoutX="10.0" layoutY="15.0" prefHeight="28.0" prefWidth="99.0" text="Game Name" GridPane.rowIndex="1" />
+                                          <TextField fx:id="gameNameTextfield" layoutX="132.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label prefHeight="28.0" prefWidth="99.0" text="Location" GridPane.rowIndex="2" />
+                                          <TextField fx:id="locationTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="155.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="departmentTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="secondDepartmentTextfield" layoutX="132.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label layoutX="10.0" layoutY="91.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Department" GridPane.rowIndex="3" />
+                                          <Label layoutX="10.0" layoutY="129.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="2ND Depart" GridPane.rowIndex="4" />
+                                          <Label layoutX="10.0" layoutY="185.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Vendor" GridPane.rowIndex="5" />
+                                          <TextField fx:id="vendorTextfield" layoutX="132.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="gameNumberTextfield" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: lightgray;" GridPane.columnIndex="1">
+                                       
+                                    </TextField>
+                                          <DatePicker fx:id="purchaseDateTextfield" prefHeight="25.0" prefWidth="154.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="30.0" top="10.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </opaqueInsets>
+                        </Pane>
+                        <Pane fx:id="secondaryBox" layoutX="344.0" layoutY="13.0" prefHeight="292.0" prefWidth="249.0">
+                           <children>
+                              <GridPane fx:id="gridPane2" layoutX="20.0" layoutY="-1.0" prefHeight="229.0" prefWidth="209.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label styleClass="recBoxLabel" text="Coin Meter" />
+                                    <Label styleClass="recBoxLabel" text="Ticket Meter" GridPane.rowIndex="1" />
+                                    <Label styleClass="recBoxLabel" text="Prize Meter" GridPane.rowIndex="2" />
+                                    <Label styleClass="recBoxLabel" text="Serial Number" GridPane.rowIndex="3" />
+                                    <TextField fx:id="coinMeterTextfield" GridPane.columnIndex="1" />
+                                    <TextField fx:id="ticketMeterTextfield" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="prizeMeterTextfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="serialNumberTextfield" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label styleClass="recBoxLabel" text="Taxable" GridPane.rowIndex="4" />
+                                    <RadioButton fx:id="taxableRadio" mnemonicParsing="false" prefHeight="17.0" prefWidth="38.0" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="70.0" />
+                                       </padding>
+                                    </RadioButton>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="14.0" layoutY="319.0" prefHeight="250.0" prefWidth="673.0" styleClass="recBox">
+                           <children>
+                                    <TableView fx:id="gameDetailTable" editable="true" focusTraversable="false" layoutY="1.0" prefHeight="248.0" prefWidth="673.0">
+                                       <columns>
+                                          <TableColumn fx:id="gameDateColumn" prefWidth="98.0" text="Date" />
+                                          <TableColumn fx:id="gameSalesColumn" prefWidth="109.0" text="Sales" />
+                                          <TableColumn fx:id="gameCoinMeterColumn" prefWidth="142.0" text="  Coin Meter  " />
+                                          <TableColumn fx:id="gameTicketMeterColumn" prefWidth="127.0" text="  Ticket Meter  " />
+                                          <TableColumn fx:id="gamePrizeMeterColumn" prefWidth="125.0" text="Prize Meter" />
+                                          <TableColumn fx:id="gameIDColumn" prefWidth="71.0" resizable="false" text="Tran ID" />
+                                       </columns>
+                                    </TableView>
+                           </children>
+                        </Pane>
+                        <AnchorPane fx:id="editPane" layoutX="14.0" layoutY="583.0" prefHeight="58.0" prefWidth="673.0" styleClass="editPane">
+                           <children>
+                              <DatePicker fx:id="editPaneDate" layoutX="7.0" layoutY="8.0" prefHeight="40.0" prefWidth="123.0" />
+                              <TextField fx:id="editPaneSales" layoutX="142.0" layoutY="9.0" prefHeight="40.0" prefWidth="99.0" />
+                              <TextField fx:id="editPaneCoins" layoutX="252.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+                              <TextField fx:id="editPaneTickets" layoutX="357.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+                              <TextField fx:id="editPanePrizes" layoutX="464.0" layoutY="10.0" prefHeight="40.0" prefWidth="99.0" />
+                              <Button fx:id="editPaneSave" layoutX="575.0" layoutY="10.0" mnemonicParsing="false" onAction="#editPaneSaveButtonDo" prefHeight="40.0" prefWidth="76.0" text="Save F9" />
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="depositTab" onSelectionChanged="#setTabsSelected" text="Deposit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox fx:id="cColorPickerPane" layoutX="923.0" prefHeight="881.0" prefWidth="708.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ColorPicker fx:id="cPickerRoot" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ColorPicker fx:id="cPickerButton" onAction="#getCpickerColor" promptText="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="BackGround" textFill="#fcf9f9" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Buttons" textFill="#f2efef" GridPane.rowIndex="2" />
+                  <ColorPicker fx:id="cPickerPrimaryBox" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Primary Box" textFill="#f5f4f4" GridPane.rowIndex="5" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Secondary Box" textFill="#fffefe" GridPane.rowIndex="7" />
+                  <ColorPicker fx:id="cPickerSecondaryBox" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Pri Box Text" textFill="#f8f6f6" GridPane.rowIndex="6" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Button Text" textFill="#fcfafa" GridPane.rowIndex="3" />
+                  <ColorPicker fx:id="cPickerButtonText" onAction="#getCpickerColor" promptText="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ColorPicker fx:id="cPickerPrimaryBoxText" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Second Box Text" textFill="#fffdfd" GridPane.rowIndex="8" />
+                  <ColorPicker fx:id="cPickerSecondaryBoxText" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Tab Pane Header" textFill="#fffdfd" GridPane.rowIndex="10" />
+                  <ColorPicker fx:id="cPickerTabPaneHeader" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Tab Pane Header" textFill="#f5f3f3" GridPane.rowIndex="11" />
+                  <CheckBox fx:id="tabHeaderTransparent" mnemonicParsing="false" prefHeight="17.0" prefWidth="102.0" text="Transparent" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="99.0" text="Exit (ESC)" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Tab Titles" textFill="#fcfafa" GridPane.rowIndex="12" />
+                  <ColorPicker fx:id="cPickerTabTitles" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Tab Titles Selected" textFill="#fffdfd" GridPane.rowIndex="13" />
+                  <ColorPicker fx:id="cPickerTabTitlesSelected" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Table Header" textFill="#fffdfd" GridPane.rowIndex="15" />
+                  <ColorPicker fx:id="cPickerTableHeader" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <ColorPicker fx:id="cPickerTableRow" onAction="#getCpickerColor" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="BackGround Color" textFill="#fcfafa" GridPane.columnIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="104.0" text="Text Color" textFill="#fcfafa" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+         <opaqueInsets>
+            <Insets right="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="30.0" right="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

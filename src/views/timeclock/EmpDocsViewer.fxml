@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="894.0" prefWidth="1227.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.timeclock.EmpDocsViewerController">
+   <children>
+      <VBox fx:id="editBox" alignment="TOP_CENTER" layoutX="117.0" layoutY="47.0" prefHeight="919.0" prefWidth="1227.0" spacing="20.0" AnchorPane.bottomAnchor="-25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="102.0" prefWidth="832.0">
+               <children>
+                  <GridPane prefHeight="49.0" prefWidth="558.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="21.0" minHeight="1.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="listOfLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="214.0" styleClass="recBoxLabel" text="List of  Documents">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="searchField" onKeyPressed="#searchRecord" prefHeight="25.0" prefWidth="184.0" promptText="Search" GridPane.columnIndex="1" />
+                        <Label fx:id="listOfLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="10.0" prefHeight="31.0" prefWidth="249.0" styleClass="recBoxLabel" text="Press (ESCAPE KEY) for new search" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+            <TableView fx:id="gamesTable" onKeyPressed="#keyListener" onMouseClicked="#TableClicked" prefHeight="367.0" prefWidth="985.0">
+              <columns>
+                  <TableColumn fx:id="gameDateColumn" prefWidth="144.0" text="Date" />
+                <TableColumn fx:id="gameNameColumn" prefWidth="198.0" text="Doc Type" />
+                <TableColumn fx:id="gameLocationColumn" prefWidth="393.0" text="Notes" />
+                  <TableColumn fx:id="gameDepartmentColumn" prefWidth="451.0" text="Location" />
+              </columns>
+            </TableView>
+            <ButtonBar buttonOrder="" prefHeight="43.0" prefWidth="1091.0">
+              <buttons>
+                  <Button fx:id="editButton" layoutX="585.0" layoutY="18.0" mnemonicParsing="false" onAction="#editButtonGo" text="Edit" />
+                  <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButtonGo" text="New" />
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+                  <Button fx:id="selectButton" mnemonicParsing="false" onAction="#selectButtonPushed" text="Show Video" />
+              </buttons>
+            </ButtonBar>
+            <HBox fx:id="editBox2" alignment="CENTER_LEFT" prefHeight="355.0" prefWidth="1187.0" spacing="20.0">
+               <children>
+                  <GridPane fx:id="gridPane" prefHeight="202.0" prefWidth="1051.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="147.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="201.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="421.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="64.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <DatePicker fx:id="DatePicker" prefHeight="37.0" prefWidth="150.0" />
+                        <TextField fx:id="fKeyWords" prefHeight="39.0" prefWidth="455.0" GridPane.columnIndex="2" />
+                        <TextField fx:id="fLinkStorage" prefHeight="38.0" prefWidth="308.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="filePickerButton" mnemonicParsing="false" onAction="#openFileLocationSaveTo" prefHeight="25.0" prefWidth="93.0" text="Set File Folder" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Button fx:id="saveButton1" mnemonicParsing="false" onAction="#saveButtonGo" prefHeight="25.0" prefWidth="91.0" text="Save" GridPane.columnIndex="3" />
+                        <Button fx:id="filePickerButtonStorage" layoutX="829.0" layoutY="61.0" mnemonicParsing="false" onAction="#openFileLocationSource" prefHeight="25.0" prefWidth="94.0" text="Get File 1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="fLink" layoutX="163.0" layoutY="14.0" onAction="#openFileLocationSaveTo" onMouseClicked="#openFileLocationSaveTo" prefHeight="35.0" prefWidth="213.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="206.0" text="Where is the file 1 Currently:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="fLableLink" alignment="CENTER_RIGHT" layoutX="163.0" layoutY="44.0" prefHeight="17.0" prefWidth="206.0" text="Where to save the file(s) to:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ComboBox fx:id="fTitleComboBox" prefHeight="38.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                        <Button fx:id="filePickerButtonStorage2" layoutX="893.0" layoutY="93.0" mnemonicParsing="false" onAction="#openFileLocationSource" prefHeight="25.0" prefWidth="93.0" text="Get File 2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button fx:id="filePickerButtonStorage3" layoutX="893.0" layoutY="132.0" mnemonicParsing="false" onAction="#fireOpenLocationSource" prefHeight="25.0" prefWidth="93.0" text="Get File 3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button fx:id="filePickerButtonStorage4" layoutX="893.0" layoutY="171.0" mnemonicParsing="false" onAction="#fireOpenLocationSource" prefHeight="25.0" prefWidth="93.0" text="Get File 4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label fx:id="fLabel2" alignment="CENTER_RIGHT" layoutX="176.0" layoutY="59.0" prefHeight="17.0" prefWidth="206.0" text="Where is the file 2 Currently:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="fLabel3" alignment="CENTER_RIGHT" layoutX="176.0" layoutY="97.0" prefHeight="17.0" prefWidth="206.0" text="Where is the file 3 Currently:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="fLabel4" alignment="CENTER_RIGHT" layoutX="176.0" layoutY="136.0" prefHeight="17.0" prefWidth="206.0" text="Where is the file 4 Currently:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="fTitleComboBox2" layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="fTitleComboBox3" layoutX="10.0" layoutY="87.0" prefHeight="38.0" prefWidth="200.0" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="fTitleComboBox4" layoutX="10.0" layoutY="126.0" prefHeight="38.0" prefWidth="200.0" GridPane.rowIndex="4" />
+                        <TextField fx:id="fLinkStorage2" layoutX="392.0" layoutY="48.0" prefHeight="38.0" prefWidth="308.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="fLinkStorage3" layoutX="392.0" layoutY="87.0" onAction="#fireOpenLocationSource" prefHeight="38.0" prefWidth="308.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="fLinkStorage4" layoutX="392.0" layoutY="126.0" prefHeight="38.0" prefWidth="308.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="fTitleComboBox5" layoutX="10.0" layoutY="162.0" prefHeight="38.0" prefWidth="200.0" GridPane.rowIndex="5" />
+                        <Label fx:id="fLabel5" alignment="CENTER_RIGHT" layoutX="176.0" layoutY="173.0" prefHeight="17.0" prefWidth="206.0" text="Where is the file 5 Currently:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="fLinkStorage5" layoutX="392.0" layoutY="162.0" prefHeight="38.0" prefWidth="308.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Button fx:id="filePickerButtonStorage5" layoutX="893.0" layoutY="169.0" mnemonicParsing="false" onAction="#fireOpenLocationSource" prefHeight="25.0" prefWidth="93.0" text="Get File 5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="176.0" layoutY="59.0" prefHeight="17.0" prefWidth="206.0" text="Short Notes, Comments" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

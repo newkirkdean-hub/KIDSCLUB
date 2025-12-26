@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="401.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.AdditionalCardPopUpController">
+   <children>
+      <Button fx:id="cancelButton" layoutX="161.0" layoutY="321.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Cancel (ESC)" />
+      <Label layoutX="182.0" layoutY="43.0" prefHeight="31.0" prefWidth="166.0" text="Account Number" />
+      <Label fx:id="nameLabel" layoutX="90.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <Label fx:id="transferToNameLabel" layoutX="70.0" layoutY="116.0" prefHeight="31.0" prefWidth="404.0" />
+      <Button fx:id="addPinNumberButton" layoutX="161.0" layoutY="265.0" mnemonicParsing="false" onAction="#AddPinNumberButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Add Additional Card" />
+      <Label layoutX="168.0" layoutY="147.0" prefHeight="54.0" prefWidth="166.0" text="Scan Additional Card" />
+      <PasswordField fx:id="accountNumberTF" layoutX="195.0" layoutY="74.0" prefHeight="31.0" prefWidth="153.0" />
+      <HBox alignment="CENTER" layoutX="7.0" layoutY="194.0" prefHeight="31.0" prefWidth="561.0">
+         <children>
+            <TextField fx:id="newPinNumberTF" alignment="CENTER" prefHeight="16.0" prefWidth="231.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

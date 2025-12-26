@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="839.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.BridgeReceiptsBackRoomController">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="468.0" prefWidth="1280.0">
+        <columns>
+          <TableColumn fx:id="C1" editable="false" prefWidth="167.0" text="Name" />
+            <TableColumn fx:id="C6" prefWidth="116.0" text="Start Date" />
+            <TableColumn fx:id="C7" prefWidth="113.0" text="End Date" />
+            <TableColumn fx:id="C10" editable="false" prefWidth="88.0" text="Sort" />
+            <TableColumn fx:id="C9" prefWidth="91.0" text="Receipt" />
+            <TableColumn fx:id="C11" prefWidth="354.0" text="Cafe Reciept" />
+            <TableColumn fx:id="C12" prefWidth="350.0" text="Bridge Reciept" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="25.0" layoutY="505.0" prefHeight="273.0" prefWidth="1280.0" styleClass="recBox">
+         <children>
+            <VBox prefHeight="273.0" prefWidth="174.0">
+               <children>
+                  <TextField fx:id="lField" prefHeight="82.0" prefWidth="156.0" promptText="Promo Name" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" text="1=Shows @ Bridge &#10;(Prints a Bridge Receipt)&#10;&#10;2=Shows @ Bridge &#10;(Prints a Cafe Receipts)&#10;&#10;3= Shows @ Bridge &amp; Cafe&#10;(Prints Both Cafe &amp; Bridge)&#10;&#10;4= Shows @ Cafe only&#10;(Prints Cafe Only)" />
+               </children>
+            </VBox>
+            <VBox prefHeight="264.0" prefWidth="242.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="165.0" text="Start Date" />
+                  <DatePicker fx:id="dStart" prefHeight="37.0" prefWidth="242.0" />
+                  <Label prefHeight="17.0" prefWidth="170.0" text="End Date" />
+                  <DatePicker fx:id="dEnd" prefHeight="37.0" prefWidth="242.0" />
+                  <Label prefHeight="17.0" prefWidth="164.0" text="Sort Order" />
+                  <TextField fx:id="tQty" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="Sort">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <Label prefHeight="27.0" prefWidth="238.0" text="Receipt to Print" />
+                  <TextField fx:id="trCeipt" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="RCeipt">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+            </VBox>
+            <TextArea fx:id="cafeRciept" prefHeight="257.0" prefWidth="397.0" promptText="Cafe Receipt" />
+            <TextArea fx:id="bridgeRciept" prefHeight="257.0" prefWidth="424.0" promptText="Bridge Receipt" />
+         </children>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="783.0" prefHeight="39.0" prefWidth="805.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButton" prefHeight="36.0" prefWidth="87.0" text="New" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+            <Button fx:id="deleteButton" layoutX="184.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="36.0" prefWidth="87.0" text="Delete" />
+            <Button fx:id="vReceiptsButton" mnemonicParsing="false" onAction="#testPrintReceipt" prefHeight="36.0" prefWidth="141.0" text="View Receipts" />
+            <Button fx:id="viewScreen" layoutX="97.0" layoutY="10.0" mnemonicParsing="false" onAction="#GOBridgeReceipts" prefHeight="36.0" prefWidth="115.0" text="View Bridge" />
+            <Button fx:id="viewScreen1" layoutX="499.0" layoutY="10.0" mnemonicParsing="false" onAction="#GOCafeReceipts" prefHeight="36.0" prefWidth="115.0" text="View Cafe" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

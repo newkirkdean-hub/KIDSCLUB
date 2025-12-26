@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#keyListener" prefHeight="706.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.TicketEaterCodesController">
+   <children>
+      <VBox fx:id="editBox" alignment="TOP_CENTER" layoutX="117.0" layoutY="47.0" prefHeight="706.0" prefWidth="546.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <TableView fx:id="EaterTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyListener" onMouseClicked="#TableClicked" prefHeight="564.0" prefWidth="532.0">
+              <columns>
+                <TableColumn fx:id="EaterEaterCodes" prefWidth="121.0" text="Eater Code" />
+                <TableColumn fx:id="EaterDropit" prefWidth="131.0" text="Machine" />
+                  <TableColumn fx:id="EaterStart" prefWidth="149.0" text="Start" />
+                  <TableColumn fx:id="EaterStop" prefWidth="129.0" text="Stop" />
+              </columns>
+            </TableView>
+            <ButtonBar buttonOrder="" prefHeight="71.0" prefWidth="538.0">
+              <buttons>
+                  <Button fx:id="editButton" layoutX="585.0" layoutY="18.0" mnemonicParsing="false" onAction="#editButtonGo" text="Edit" />
+                  <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButtonGo" text="New" />
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+              </buttons>
+            </ButtonBar>
+            <HBox fx:id="editBox2" alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="487.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="fEaterCodes" prefHeight="25.0" prefWidth="89.0" />
+                  <TextField fx:id="fDropIt" prefHeight="23.0" prefWidth="92.0" />
+                  <TextField fx:id="fStart" alignment="CENTER" prefHeight="25.0" prefWidth="99.0" />
+                  <TextField fx:id="fStop" alignment="CENTER" layoutX="251.0" layoutY="48.0" prefHeight="25.0" prefWidth="99.0" />
+                  <Button fx:id="cancelEditButton" mnemonicParsing="false" onAction="#cancelEditButtonGo" prefHeight="25.0" prefWidth="88.0" text="Cancel" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonGo" prefHeight="25.0" prefWidth="71.0" text="Save" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

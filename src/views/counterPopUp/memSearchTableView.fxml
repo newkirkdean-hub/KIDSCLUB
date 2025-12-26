@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="621.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.memSearchTableViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="117.0" layoutY="47.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="69.0" prefWidth="560.0">
+               <children>
+                  <GridPane prefHeight="100.0" prefWidth="558.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="21.0" minHeight="1.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="listOfLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="214.0" styleClass="recBoxLabel" text="List of (ALL) Members">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="searchField" onKeyPressed="#searchRecord" onMouseClicked="#CCNClicked" prefHeight="25.0" prefWidth="184.0" promptText="Search" GridPane.columnIndex="1" />
+                        <Label fx:id="listOfLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="10.0" prefHeight="20.0" prefWidth="253.0" styleClass="recBoxLabel" text="Press (ESCAPE KEY) for new search" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+            <TableView fx:id="gamesTable" onKeyPressed="#keyListener" onMouseClicked="#TableClicked" prefHeight="444.0" prefWidth="560.0">
+              <columns>
+                <TableColumn fx:id="gameNameColumn" prefWidth="117.0" text="First Name" />
+                <TableColumn fx:id="gameLocationColumn" prefWidth="120.0" text="Last Name" />
+                  <TableColumn fx:id="gameDepartmentColumn" prefWidth="228.0" text="Address" />
+                  <TableColumn fx:id="gameIDColumn" prefWidth="94.0" text="ID" />
+              </columns>
+            </TableView>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+                  <Button fx:id="selectButton" mnemonicParsing="false" onAction="#selectButtonPushed" text="Select" />
+                  <Button fx:id="fullListLMTButton" focusTraversable="false" mnemonicParsing="false" onAction="#getFullListLastTransactionMemberVIP" text="Button" visible="false" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="648.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.LockMemberReasonPopUp">
+   <children>
+      <Button fx:id="cancelButton" layoutX="219.0" layoutY="538.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Cancel (ESC)" />
+      <Button fx:id="printButton" layoutX="37.0" layoutY="538.0" mnemonicParsing="false" onAction="#printButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Save F6" />
+      <Label layoutX="43.0" layoutY="45.0" prefHeight="54.0" prefWidth="153.0" text="Customer Name" />
+      <TextArea fx:id="notesTF" layoutX="32.0" layoutY="189.0" prefHeight="129.0" prefWidth="472.0" wrapText="true" />
+      <Label fx:id="upperLabel" layoutX="32.0" layoutY="158.0" prefHeight="31.0" prefWidth="489.0" text="Reason for Locking this account the Employee will see" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <Label layoutX="37.0" layoutY="99.0" prefHeight="54.0" prefWidth="153.0" text="Type of Change" />
+      <Label fx:id="typeTF" layoutX="196.0" layoutY="99.0" prefHeight="54.0" prefWidth="153.0" />
+      <Label fx:id="lowerLabel" layoutX="32.0" layoutY="325.0" prefHeight="31.0" prefWidth="489.0" text="Details only Corp Veiwers can see for locking this account" />
+      <TextArea fx:id="notesTF1" layoutX="32.0" layoutY="354.0" prefHeight="129.0" prefWidth="472.0" wrapText="true" />
+      <PasswordField fx:id="purposeTF" layoutX="177.0" layoutY="60.0" prefHeight="31.0" prefWidth="173.0" />
+   </children>
+</AnchorPane>

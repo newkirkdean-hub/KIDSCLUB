@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="822.0" prefWidth="1313.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.VIPPromosController">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="468.0" prefWidth="1280.0" styleClass="table-view-noscroll">
+        <columns>
+          <TableColumn fx:id="C1" editable="false" prefWidth="125.0" text="Name" />
+          <TableColumn fx:id="C2" prefWidth="70.0" text="Initials" />
+            <TableColumn fx:id="C3" prefWidth="83.0" text="Tickets" />
+            <TableColumn fx:id="C4" prefWidth="96.0" text="Multiplyer" />
+            <TableColumn fx:id="C5" prefWidth="177.0" text="Other" />
+            <TableColumn fx:id="C6" prefWidth="93.0" text="Start Date" />
+            <TableColumn fx:id="C7" prefWidth="117.0" text="End Date" />
+            <TableColumn fx:id="C8" prefWidth="95.0" text="Repeat" />
+            <TableColumn fx:id="C10" editable="false" prefWidth="87.0" text="Sort" />
+            <TableColumn fx:id="C9" prefWidth="75.0" text="Receipt" />
+            <TableColumn fx:id="C11" prefWidth="139.0" text="Cafe Reciept" />
+            <TableColumn fx:id="C12" prefWidth="120.0" text="Bridge Reciept" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="25.0" layoutY="505.0" prefHeight="257.0" prefWidth="1280.0" styleClass="recBox">
+         <children>
+            <TextField fx:id="lField" prefHeight="82.0" prefWidth="150.0" promptText="Promo Name" />
+            <TextField fx:id="tinitials" alignment="CENTER" prefHeight="39.0" prefWidth="83.0" promptText="Initals">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <TextField fx:id="tTickets" alignment="CENTER" prefHeight="39.0" prefWidth="82.0" promptText="Tickets">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></TextField>
+            <TextField fx:id="tMultiplyer" alignment="CENTER" layoutX="235.0" layoutY="10.0" prefHeight="39.0" prefWidth="75.0" promptText="Multiplyer">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextArea fx:id="noteT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="87.0" prefWidth="195.0" promptText="Other" wrapText="true" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <DatePicker fx:id="dStart" prefHeight="39.0" prefWidth="106.0" />
+                  <DatePicker fx:id="dEnd" prefHeight="39.0" prefWidth="107.0" />
+                  <TextField fx:id="tRepeat" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="Repeatable">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="tQty" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="Sort">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="trCeipt" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="RCeipt">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+            </VBox>
+            <TextArea fx:id="cafeRciept" prefHeight="189.0" prefWidth="303.0" />
+            <TextArea fx:id="bridgeRciept" prefHeight="189.0" prefWidth="288.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="769.0" prefHeight="39.0" prefWidth="465.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButton" prefHeight="36.0" prefWidth="87.0" text="New" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="490.0" layoutY="769.0" prefHeight="39.0" prefWidth="595.0">
+         <children>
+            <Button fx:id="vReceiptsButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="141.0" text="View Receipts" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

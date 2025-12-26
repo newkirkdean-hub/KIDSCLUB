@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="451.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.PinNumberPopUpController">
+   <children>
+      <Label layoutX="61.0" layoutY="47.0" prefHeight="54.0" prefWidth="166.0" text="Account Number" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <Label fx:id="transferToNameLabel" layoutX="37.0" layoutY="105.0" prefHeight="31.0" prefWidth="404.0" />
+      <Label layoutX="49.0" layoutY="180.0" prefHeight="54.0" prefWidth="166.0" text="Enter Pin Number" />
+      <PasswordField fx:id="accountNumberTF" layoutX="220.0" layoutY="62.0" prefHeight="31.0" prefWidth="153.0" />
+      <PasswordField fx:id="newPinNumberTF" layoutX="215.0" layoutY="192.0" prefHeight="31.0" prefWidth="153.0" />
+      <Label fx:id="transferToNameLabelAddress" layoutX="43.0" layoutY="149.0" prefHeight="31.0" prefWidth="404.0" />
+      <VBox alignment="TOP_CENTER" layoutX="51.0" layoutY="241.0" prefHeight="194.0" prefWidth="389.0" spacing="15.0">
+         <children>
+            <HBox fx:id="secondPinBox" alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="389.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="166.0" text="Enter Pin Number" />
+                  <PasswordField fx:id="newPinNumberTF1" prefHeight="33.0" prefWidth="152.0" />
+               </children>
+            </HBox>
+            <Button fx:id="addPinNumberButton" mnemonicParsing="false" onAction="#AddPinNumberButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Add Pin Number to Account" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="254.0" text="Cancel (ESC)" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

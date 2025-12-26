@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="720.0" prefWidth="1159.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.GreetingsControllerClub1">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="507.0" prefWidth="1092.0">
+        <columns>
+          <TableColumn fx:id="C1" editable="false" prefWidth="200.0" text="Item" />
+          <TableColumn fx:id="C2" prefWidth="599.0" text="String" />
+            <TableColumn fx:id="C3" prefWidth="150.0" text="Number" />
+            <TableColumn fx:id="C4" editable="false" prefWidth="74.0" text="Date" />
+            <TableColumn fx:id="C6" prefWidth="68.0" text="Sort" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="25.0" layoutY="549.0" prefHeight="73.0" prefWidth="1092.0" styleClass="recBox">
+         <children>
+            <Label fx:id="c1L" prefHeight="40.0" prefWidth="231.0" text="Label" />
+            <TextField fx:id="c2T" prefHeight="39.0" prefWidth="617.0" text="t">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <TextField fx:id="c3T" alignment="CENTER" prefHeight="39.0" prefWidth="117.0" text="t">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></TextField>
+            <TextField fx:id="c4T" prefHeight="39.0" prefWidth="91.0" />
+            <TextField fx:id="sort" layoutX="576.0" layoutY="10.0" prefHeight="39.0" prefWidth="40.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="654.0" prefHeight="52.0" prefWidth="690.0" spacing="20.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+            <ColorPicker fx:id="ColorPicker" prefHeight="36.0" prefWidth="111.0" />
+            <Button fx:id="BdayEmailButton" layoutX="137.0" layoutY="10.0" mnemonicParsing="false" onAction="#BdayEmailButtonGo" prefHeight="36.0" prefWidth="111.0" text="BDay Email" />
+            <Button fx:id="ClubEmailButton" layoutX="389.0" layoutY="10.0" mnemonicParsing="false" onAction="#ClubEmailButtonGo" prefHeight="36.0" prefWidth="111.0" text="Club Email" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

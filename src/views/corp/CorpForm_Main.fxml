@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="root" onKeyPressed="#KeyListener" prefHeight="847.0" prefWidth="1302.0" stylesheets="@../../../PojosUtil/build/classes/Css/OriginalCss.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.corp.CorpForm_MainFXController">
+   <children>
+      <TabPane fx:id="corpTabPane" layoutX="4.0" layoutY="57.0" prefHeight="733.0" prefWidth="1291.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab closable="false" text="Deposits">
+               <content>
+                  <AnchorPane fx:id="depPane" prefHeight="773.0" prefWidth="800.0">
+                     <children>
+                        <TableView fx:id="SalesTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetSalesTableRow" prefHeight="561.0" prefWidth="1198.0">
+                          <columns>
+                            <TableColumn fx:id="cSalesDate" prefWidth="128.0" text="Sales Date" />
+                            <TableColumn fx:id="cDay" prefWidth="91.0" text="Day" />
+                              <TableColumn fx:id="cDepart" prefWidth="159.0" text="Department" />
+                              <TableColumn fx:id="cItemName" minWidth="0.0" prefWidth="193.0" text="Item Name" />
+                              <TableColumn fx:id="cType" prefWidth="154.0" text="Type" />
+                              <TableColumn fx:id="cAmount" prefWidth="168.0" text="Amount" />
+                              <TableColumn fx:id="cPostDate" prefWidth="123.0" text="Post Date" />
+                              <TableColumn fx:id="cMGR" prefWidth="181.0" text="MGR" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="11.0" layoutY="584.0" prefHeight="70.0" prefWidth="1198.0" styleClass="editPane">
+                           <children>
+                              <GridPane hgap="5.0" prefHeight="50.0" prefWidth="1193.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <DatePicker fx:id="salesDate" prefHeight="39.0" prefWidth="133.0" />
+                                    <ComboBox fx:id="salesDept" prefHeight="39.0" prefWidth="133.0" promptText="Dept" GridPane.columnIndex="1">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </ComboBox>
+                                    <ComboBox fx:id="salesType" prefHeight="39.0" prefWidth="110.0" promptText="Type" GridPane.columnIndex="2" />
+                                    <TextField fx:id="salesAMT" maxWidth="-Infinity" prefHeight="39.0" prefWidth="133.0" promptText="Amount" GridPane.columnIndex="4" />
+                                    <Button fx:id="salesAddEdit" mnemonicParsing="false" onAction="#AddEditSalesRecord" prefHeight="39.0" prefWidth="134.0" text="Add" GridPane.columnIndex="5" />
+                                    <Button fx:id="salesDelete" mnemonicParsing="false" onAction="#DeleteSalesRecord" prefHeight="39.0" prefWidth="134.0" text="Delete" GridPane.columnIndex="6" />
+                                    <ComboBox fx:id="salesItem_Name" prefHeight="39.0" prefWidth="133.0" promptText="Item Name" GridPane.columnIndex="3" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Cash Paid Outs">
+              <content>
+                <AnchorPane fx:id="paidOutsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="pdoutsTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetPdoutTableRow" prefHeight="561.0" prefWidth="1198.0">
+                           <columns>
+                              <TableColumn fx:id="cPdoutsDate" prefWidth="128.0" text="Sales Date" />
+                              <TableColumn fx:id="cPdoutsDay" prefWidth="72.0" text="Day" />
+                              <TableColumn fx:id="cPdoutsDepart" prefWidth="121.0" text="Department" />
+                              <TableColumn fx:id="cPdoutsType" minWidth="0.0" prefWidth="132.0" text="Type" />
+                              <TableColumn fx:id="cPdoutsItemName" prefWidth="213.0" text="Item Name" />
+                              <TableColumn fx:id="cPdoutsAmount" prefWidth="160.0" text="Amount" />
+                              <TableColumn fx:id="cPdoutsMemo" prefWidth="158.0" text="Memo" />
+                              <TableColumn fx:id="cPdoutsPostDate" prefWidth="93.0" text="Post Date" />
+                              <TableColumn fx:id="cPdoutsMGR" prefWidth="120.0" text="MGR" />
+                           </columns>
+                        </TableView>
+                        <HBox layoutX="11.0" layoutY="584.0" prefHeight="70.0" prefWidth="1198.0" styleClass="editPane">
+                           <children>
+                              <GridPane hgap="5.0" prefHeight="50.0" prefWidth="1158.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <DatePicker fx:id="pdoutsDate" prefHeight="39.0" prefWidth="133.0" />
+                                    <ComboBox fx:id="pdoutsDept" prefHeight="39.0" prefWidth="133.0" promptText="Dept" GridPane.columnIndex="1">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </ComboBox>
+                                    <ComboBox fx:id="pdoutsItem_Name" prefHeight="39.0" prefWidth="133.0" promptText="Item_Name" GridPane.columnIndex="3" />
+                                    <TextField fx:id="pdoutsAMT" maxWidth="-Infinity" prefHeight="39.0" prefWidth="128.0" promptText="Amount" GridPane.columnIndex="4" />
+                                    <Button fx:id="pdoutsAddEdit" mnemonicParsing="false" onAction="#AddEditPdoutsRecord" prefHeight="39.0" prefWidth="134.0" text="Add" GridPane.columnIndex="6" />
+                                    <Button fx:id="pdoutsDelete" mnemonicParsing="false" onAction="#DeletePdoutRecord" prefHeight="39.0" prefWidth="134.0" text="Delete" GridPane.columnIndex="7" />
+                                    <ComboBox fx:id="pdoutsType" prefHeight="39.0" prefWidth="133.0" promptText="Type" GridPane.columnIndex="2" />
+                                    <TextField fx:id="pdoutsMemo" layoutX="592.0" layoutY="16.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="154.0" promptText="Memo" GridPane.columnIndex="5" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Changers">
+              <content>
+                <AnchorPane fx:id="changerPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="changerTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetChangersTableRow" prefHeight="561.0" prefWidth="1198.0">
+                          <columns>
+                            <TableColumn fx:id="changerDate" prefWidth="95.0" text="Date" />
+                            <TableColumn fx:id="changerMGR" prefWidth="65.0" text="MGR" />
+                              <TableColumn fx:id="changerATM" prefWidth="92.0" text="ATM" />
+                              <TableColumn fx:id="bCars" prefWidth="92.0" text="BCars" />
+                              <TableColumn fx:id="changer1" prefWidth="92.0" text="Ch_1" />
+                              <TableColumn fx:id="changer2" prefWidth="92.0" text="Ch_2" />
+                              <TableColumn fx:id="changer3" prefWidth="92.0" text="Ch_3" />
+                              <TableColumn fx:id="changer4" prefWidth="92.0" text="Ch_4" />
+                              <TableColumn fx:id="changer5" prefWidth="92.0" text="Ch_5" />
+                              <TableColumn fx:id="changer8" prefWidth="92.0" text="Ch_8" />
+                              <TableColumn fx:id="changer9" prefWidth="92.0" text="Ch_9" />
+                              <TableColumn fx:id="changer12" prefWidth="92.0" text="Ch_12" />
+                              <TableColumn fx:id="changer14" prefWidth="92.0" text="Ch_14" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" layoutX="11.0" layoutY="584.0" prefHeight="70.0" prefWidth="1198.0" styleClass="editPane">
+                           <children>
+                              <GridPane fx:id="basePanel" hgap="5.0" prefHeight="60.0" prefWidth="1196.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="106.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="110.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="changer_bCars" layoutX="122.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="BCars" GridPane.columnIndex="2" />
+                                    <DatePicker fx:id="changerDt" prefHeight="39.0" prefWidth="107.0" />
+                                    <TextField fx:id="changer_ATM" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="ATM" GridPane.columnIndex="1" />
+                                    <TextField fx:id="changer_1" layoutX="122.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="1" GridPane.columnIndex="3" />
+                                    <TextField fx:id="changer_2" layoutX="122.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="2" GridPane.columnIndex="4" />
+                                    <TextField fx:id="changer_3" layoutX="122.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="3" GridPane.columnIndex="5" />
+                                    <TextField fx:id="changer_4" layoutX="345.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="4" GridPane.columnIndex="6" />
+                                    <TextField fx:id="changer_5" layoutX="456.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="5" GridPane.columnIndex="7" />
+                                    <TextField fx:id="changer_8" layoutX="567.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="8" GridPane.columnIndex="8" />
+                                    <TextField fx:id="changer_9" layoutX="678.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="9" GridPane.columnIndex="9" />
+                                    <TextField fx:id="changer_12" layoutX="789.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="12" GridPane.columnIndex="10" />
+                                    <TextField fx:id="changer_14" layoutX="900.0" layoutY="21.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="60.0" promptText="14" GridPane.columnIndex="11" />
+                                    <Button fx:id="changerAddEdit" mnemonicParsing="false" onAction="#AddEditChangerRecord" prefHeight="36.0" prefWidth="87.0" text="Add Edit" GridPane.columnIndex="12" />
+                                    <Button fx:id="changerDelete" mnemonicParsing="false" onAction="#DeleteChnagersRecord" prefHeight="36.0" prefWidth="87.0" text="Delete" GridPane.columnIndex="13" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="6.0" prefHeight="42.0" prefWidth="798.0" spacing="20.0">
+         <children>
+            <Label fx:id="exitLabel" alignment="CENTER" onMouseClicked="#ExitButtonPushed" prefHeight="28.0" prefWidth="118.0" text="Exit" textAlignment="CENTER" />
+            <Label fx:id="depReports" alignment="CENTER" prefHeight="28.0" prefWidth="118.0" text="Reports" textAlignment="CENTER" />
+            <Label fx:id="outsReports" alignment="CENTER" prefHeight="28.0" prefWidth="118.0" text="Reports" textAlignment="CENTER" />
+            <Label fx:id="depDropEdits" alignment="CENTER" prefHeight="28.0" prefWidth="118.0" text="Drop Edits" textAlignment="CENTER" />
+            <Label fx:id="outsDropEdits" alignment="CENTER" prefHeight="28.0" prefWidth="118.0" text="Drop Edits" textAlignment="CENTER" />
+            <Label fx:id="changerReports" alignment="CENTER" layoutX="562.0" layoutY="17.0" prefHeight="28.0" prefWidth="118.0" text="Report" textAlignment="CENTER" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

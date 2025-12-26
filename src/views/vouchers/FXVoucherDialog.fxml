@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="567.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.vouchers.FXVoucherDialogController">
+   <children>
+      <Button fx:id="cancelButton" layoutX="284.0" layoutY="317.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="92.0" prefWidth="126.0" text="Cancel (ESC)" />
+      <Button fx:id="printButton" layoutX="15.0" layoutY="317.0" mnemonicParsing="false" onAction="#printButtonPushed" prefHeight="92.0" prefWidth="260.0" text="Print F6" />
+      <TextField fx:id="vAmountField" layoutX="196.0" layoutY="43.0" prefHeight="54.0" prefWidth="212.0" />
+      <Label layoutX="11.0" layoutY="162.0" prefHeight="54.0" prefWidth="153.0" text="Employee Number" />
+      <PasswordField fx:id="empNumberField" layoutX="196.0" layoutY="162.0" prefHeight="54.0" prefWidth="212.0" />
+      <Label layoutX="14.0" layoutY="43.0" prefHeight="54.0" prefWidth="153.0" text="Voucher Amount " />
+      <ComboBox fx:id="cBoxReason" editable="true" layoutX="14.0" layoutY="257.0" prefHeight="54.0" prefWidth="391.0" promptText="* * * COMING SOON * * *" />
+      <Label fx:id="cBoxLabel" layoutX="15.0" layoutY="231.0" prefHeight="29.0" prefWidth="459.0" text="Enter Reason for Voucher">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="addingLabel" layoutX="14.0" layoutY="103.0" prefHeight="54.0" prefWidth="153.0" text="Multiple Vouchers" visible="false" />
+      <TextField fx:id="addingField" editable="false" focusTraversable="false" layoutX="196.0" layoutY="103.0" prefHeight="54.0" prefWidth="212.0" visible="false" />
+      <Button fx:id="depositButton" layoutX="15.0" layoutY="417.0" mnemonicParsing="false" onAction="#GOdepositButton" prefHeight="92.0" prefWidth="260.0" text="Deposit F4" visible="false" />
+   </children>
+</AnchorPane>

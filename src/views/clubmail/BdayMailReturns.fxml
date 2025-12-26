@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="616.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.clubmail.BdayMailReturnsController">
+   <children>
+      <VBox alignment="CENTER" layoutX="117.0" layoutY="47.0" prefWidth="695.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox prefHeight="35.0" prefWidth="560.0">
+               <children>
+                  <GridPane prefHeight="35.0" prefWidth="776.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="listOfLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="214.0" styleClass="recBoxLabel" text="List of (ALL) Members">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="searchField" onKeyPressed="#searchRecord" prefHeight="25.0" prefWidth="184.0" promptText="Search" GridPane.columnIndex="1" />
+                        <Label prefHeight="23.0" prefWidth="235.0" text=" Press F10 to Reset Search" textFill="#fcf9f9" GridPane.columnIndex="2" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </HBox>
+            <TableView fx:id="gamesTable" onKeyPressed="#keyListener" prefHeight="445.0" prefWidth="659.0">
+              <columns>
+                <TableColumn fx:id="gameNameColumn" prefWidth="160.0" text="First Name" />
+                <TableColumn fx:id="gameLocationColumn" prefWidth="184.0" text="Last Name" />
+                  <TableColumn fx:id="gameDepartmentColumn" prefWidth="371.0" text="Address" />
+                  <TableColumn fx:id="gameIDColumn" prefWidth="81.0" text="ID" />
+              </columns>
+            </TableView>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Exit ESC" />
+                  <Button fx:id="selectButton" focusTraversable="false" mnemonicParsing="false" onAction="#selectButtonPushed" text="Select (F11)" />
+                  <CheckBox fx:id="newMemberCheckBox" focusTraversable="false" mnemonicParsing="false" prefHeight="38.0" prefWidth="144.0" text="Wrong Address" />
+                  <CheckBox fx:id="bdayCardCheckBox" focusTraversable="false" mnemonicParsing="false" prefHeight="38.0" text="Birthday Card" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

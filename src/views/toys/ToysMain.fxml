@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="759.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.toys.ToysMainController">
+   <children>
+      <GridPane fx:id="gridPane1" layoutX="38.0" layoutY="35.0" prefHeight="412.0" prefWidth="900.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="37.0" prefWidth="195.0" text="Item Name:" />
+            <TextField fx:id="iItemName" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" />
+            <Label layoutX="10.0" layoutY="29.0" prefHeight="37.0" prefWidth="195.0" text="Vendor:" GridPane.rowIndex="1" />
+            <TextField fx:id="iVendor" layoutX="205.0" layoutY="31.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="103.0" prefHeight="37.0" prefWidth="195.0" text="Item Number:" GridPane.rowIndex="2" />
+            <TextField fx:id="iItemNumber" layoutX="205.0" layoutY="105.0" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="177.0" prefHeight="37.0" prefWidth="195.0" text="Purchase Date:" GridPane.rowIndex="3" />
+            <Label layoutX="10.0" layoutY="184.0" prefHeight="37.0" prefWidth="195.0" text="Department:" GridPane.rowIndex="5" />
+            <Label layoutX="10.0" layoutY="292.0" prefHeight="37.0" prefWidth="195.0" text="Class:" GridPane.rowIndex="6" />
+            <Label layoutX="10.0" layoutY="268.0" prefHeight="37.0" prefWidth="195.0" text="Class II :" GridPane.rowIndex="7" />
+            <Label layoutX="10.0" layoutY="310.0" prefHeight="37.0" prefWidth="195.0" text="Class III :" GridPane.rowIndex="8" />
+            <Label layoutX="10.0" layoutY="310.0" prefHeight="37.0" prefWidth="195.0" text="Class IIII :" GridPane.rowIndex="9" />
+            <TextField fx:id="iDepartment" layoutX="205.0" layoutY="128.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="iClass" layoutX="205.0" layoutY="204.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="iClassII" layoutX="205.0" layoutY="242.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="iClassIII" layoutX="205.0" layoutY="280.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="iClassIIII" layoutX="205.0" layoutY="318.0" onMouseClicked="#handle" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="195.0" text="Price Per Unit:" GridPane.columnIndex="3" />
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="195.0" text="Ticket Price:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="iPricePerUnit" layoutX="160.0" layoutY="12.0" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="4" />
+            <TextField fx:id="iTicketPrice" layoutX="160.0" layoutY="12.0" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="bClose" layoutX="550.0" layoutY="160.0" mnemonicParsing="false" onAction="#CloseItem" prefHeight="34.0" prefWidth="179.0" text="Close (DELETE) Item" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button fx:id="bWeights" layoutX="550.0" layoutY="160.0" mnemonicParsing="false" onAction="#OrderButtonPressed" prefHeight="34.0" prefWidth="179.0" text="F4 Orer / Reorder / Return" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Button fx:id="bExit" layoutX="550.0" layoutY="197.0" mnemonicParsing="false" onAction="#exit" prefHeight="34.0" prefWidth="179.0" text="Exit ESC" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Button fx:id="bDetails" layoutX="550.0" layoutY="271.0" mnemonicParsing="false" onAction="#ShowDetail" prefHeight="34.0" prefWidth="179.0" text="Detail F3" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Button fx:id="bEdit" layoutX="730.0" layoutY="344.0" mnemonicParsing="false" onAction="#EditButtonGo" prefHeight="34.0" prefWidth="179.0" text="Edit F9" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Button fx:id="bSearch" layoutX="550.0" layoutY="221.0" mnemonicParsing="false" onAction="#SearchButtonPressed" prefHeight="34.0" prefWidth="179.0" text="Search F7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Button fx:id="bMore" layoutX="730.0" layoutY="344.0" mnemonicParsing="false" onMouseEntered="#menuItemsButtonMouseOver" prefHeight="34.0" prefWidth="179.0" text="More . . ." GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <DatePicker fx:id="iPurchaseDate" prefHeight="32.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="pLabelButton" layoutX="550.0" layoutY="221.0" mnemonicParsing="false" onAction="#pLabel" prefHeight="34.0" prefWidth="179.0" text="Create Label" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Label layoutX="550.0" layoutY="55.0" prefHeight="37.0" prefWidth="195.0" text="Requires Notes" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="iReqNotesField" layoutX="730.0" layoutY="57.0" prefHeight="33.0" prefWidth="195.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.timeclock.TClockDialogFXController">
+   <children>
+      <Label fx:id="jLabel1" layoutX="13.0" layoutY="63.0" prefHeight="34.0" prefWidth="173.0" text="Employee Number" />
+      <Button fx:id="clockIn" layoutX="435.0" layoutY="36.0" mnemonicParsing="false" onAction="#clockInButtonPushed" prefHeight="62.0" prefWidth="163.0" text="Clock In F3" />
+      <Button fx:id="clockOut" layoutX="435.0" layoutY="110.0" mnemonicParsing="false" onAction="#clockOutButtonPushed" prefHeight="62.0" prefWidth="163.0" text="Clock Out F4" />
+      <Button fx:id="printBtn" layoutX="435.0" layoutY="188.0" mnemonicParsing="false" onAction="#printBtnDo" prefHeight="62.0" prefWidth="163.0" text="Print F6" />
+      <Label fx:id="empNameLabel" layoutX="54.0" layoutY="183.0" prefHeight="34.0" prefWidth="315.0" text="Label" />
+      <ComboBox fx:id="departmentField" layoutX="54.0" layoutY="232.0" prefHeight="47.0" prefWidth="315.0" />
+      <Label fx:id="F7Print" layoutX="434.0" layoutY="271.0" prefHeight="47.0" prefWidth="155.0" text="F7 Print This Week" />
+      <TextField fx:id="clocktypevar" editable="false" focusTraversable="false" layoutX="24.0" layoutY="318.0" prefHeight="25.0" prefWidth="31.0" visible="false" />
+      <Label fx:id="scrollTextLable" layoutX="54.0" layoutY="138.0" prefHeight="34.0" prefWidth="315.0" style="-fx-background-color: yellow; -fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: center;" styleClass="editPane" text="Label" />
+      <PasswordField fx:id="empNumberIn" layoutX="196.0" layoutY="57.0" prefHeight="47.0" prefWidth="173.0" />
+   </children>
+</AnchorPane>

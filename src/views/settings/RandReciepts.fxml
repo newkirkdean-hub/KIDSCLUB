@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="551.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.RandRecieptsController">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="194.0" prefWidth="646.0" styleClass="table-view-noscroll">
+        <columns>
+          <TableColumn fx:id="C1" editable="false" prefWidth="128.0" text="Winner Type" />
+          <TableColumn fx:id="C2" prefWidth="105.0" text="Needed" />
+            <TableColumn fx:id="C3" prefWidth="118.0" text="Current" />
+            <TableColumn fx:id="C4" prefWidth="256.0" text="Reciept Printout" />
+            <TableColumn fx:id="C5" editable="false" prefWidth="38.0" text="ID" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="25.0" layoutY="244.0" prefHeight="243.0" prefWidth="646.0" styleClass="recBox">
+         <children>
+            <Label fx:id="c1L" prefHeight="38.0" prefWidth="163.0" text="No Selection">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="c2T" alignment="CENTER" prefHeight="39.0" prefWidth="110.0" text="t">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <TextField fx:id="c3T" alignment="CENTER" prefHeight="39.0" prefWidth="112.0" text="t">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></TextField>
+            <TextArea fx:id="noteT" prefHeight="235.0" prefWidth="261.0" wrapText="true" />
+         </children>
+      </HBox>
+      <Button fx:id="cancelButton" layoutX="33.0" layoutY="487.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+      <Button fx:id="updateButton" layoutX="140.0" layoutY="487.0" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+   </children>
+</AnchorPane>

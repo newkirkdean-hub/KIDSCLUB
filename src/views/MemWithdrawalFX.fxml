@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="684.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MemWithdrawalFXController">
+   <children>
+      <Pane prefHeight="684.0" prefWidth="892.0">
+         <children>
+            <Label fx:id="jLabel1" layoutX="11.0" layoutY="41.0" prefHeight="34.0" prefWidth="173.0" text="Member Card Number" />
+            <VBox fx:id="customerInfoBox" layoutX="19.0" layoutY="99.0" prefHeight="148.0" prefWidth="378.0" spacing="10.0" styleClass="editPane">
+               <children>
+                  <Label fx:id="customerNameLabel" alignment="CENTER" prefHeight="40.0" prefWidth="415.0" style="-fx-font-size: 22;" styleClass="recBoxLabel" text="sdfsd">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="customerBalanceLabel" alignment="CENTER" prefHeight="40.0" prefWidth="415.0" style="-fx-font-size: 18; -fx-font-weight: bold;" styleClass="recBoxLabel" text="sdfsd">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="customerAddressLabel" alignment="CENTER" prefHeight="40.0" prefWidth="415.0" style="-fx-font-size: 18;" styleClass="recBoxLabel" text="sdfsd">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <PasswordField fx:id="CCNumberIn" layoutX="219.0" layoutY="35.0" onMouseClicked="#CCNClicked" prefHeight="47.0" prefWidth="173.0" />
+            <Label fx:id="scanFieldLabel" layoutX="11.0" layoutY="319.0" prefHeight="34.0" prefWidth="180.0" text="Scan Item" />
+            <Button fx:id="doButton" layoutX="128.0" layoutY="464.0" mnemonicParsing="false" onAction="#doButtonPushed" prefHeight="56.0" prefWidth="159.0" text="Withdrawal F6" />
+            <TextField fx:id="scanField" layoutX="219.0" layoutY="313.0" prefHeight="47.0" prefWidth="173.0" />
+            <Label fx:id="scrollTextLable" layoutX="50.0" layoutY="259.0" prefHeight="34.0" prefWidth="315.0" style="-fx-background-color: yellow; -fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: center;" styleClass="editPane" text="Label" />
+            <TableView fx:id="SalesTable" layoutX="434.0" layoutY="41.0" prefHeight="353.0" prefWidth="418.0">
+              <columns>
+                <TableColumn fx:id="QTYColumn" prefWidth="73.0" style="-fx-alignment: CENTER;" text="Quantity" />
+                <TableColumn fx:id="ItemNameColumn" prefWidth="229.0" style="-fx-padding: 0,15,0,0;" text="Item Name" />
+                  <TableColumn fx:id="TotalColumn" prefWidth="115.0" style="-fx-padding: 0,0,0,5;" text="Total" />
+              </columns>
+            </TableView>
+            <Label fx:id="totalwithdrawalLabel" layoutX="447.0" layoutY="419.0" prefHeight="34.0" prefWidth="159.0" text="Total" />
+            <TextField fx:id="totalwithdrawalField" layoutX="627.0" layoutY="413.0" prefHeight="47.0" prefWidth="173.0">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <Label fx:id="remainingLabel" layoutX="445.0" layoutY="475.0" prefHeight="34.0" prefWidth="159.0" text="Remaining" />
+            <TextField fx:id="remainingField" layoutX="628.0" layoutY="469.0" prefHeight="47.0" prefWidth="173.0">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <Label fx:id="empLabel" layoutX="11.0" layoutY="377.0" prefHeight="34.0" prefWidth="180.0" text="Employee Number" />
+            <PasswordField fx:id="empNumber" layoutX="219.0" layoutY="373.0" prefHeight="47.0" prefWidth="173.0" />
+            <Label id="BigBanner" alignment="CENTER" layoutX="1.0" layoutY="550.0" prefHeight="136.0" prefWidth="826.0" styleClass="bigBanner" text="WithDrawal" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="74.0" />
+               </font>
+            </Label>
+            <Button fx:id="fullListLMTButton" focusTraversable="false" layoutX="50.0" layoutY="585.0" mnemonicParsing="false" onAction="#getFullListLastTransactionMemberVIP" text="Button" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="992.0" prefWidth="981.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.games.GameMainController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="673.0" layoutY="100.0" prefHeight="1070.0" prefWidth="308.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="673.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="userButton" mnemonicParsing="false" onMouseEntered="#menuItemsButtonMouseOver" prefHeight="40.0" prefWidth="181.0" text="Coin Collect F3" />
+            <Button fx:id="depositButton" mnemonicParsing="false" onAction="#depositButtonPushed" prefHeight="40.0" prefWidth="181.0" text="Game Deposit F4" />
+            <Button fx:id="printButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="181.0" text="Print Numbers F5" />
+            <Button fx:id="gamesButton" mnemonicParsing="false" onAction="#gamesButtonPushed" prefHeight="40.0" prefWidth="181.0" text="Games F6" />
+            <Button fx:id="reportsButton" mnemonicParsing="false" onAction="#reportsButtonPressed" prefHeight="40.0" prefWidth="181.0" text="Reports F7" />
+            <Button fx:id="notesButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="181.0" text="Notes F8" />
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="181.0" text="EXIT (ESC)" />
+            <Button fx:id="colorsButton" layoutX="163.0" layoutY="410.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="181.0" text="Notes F8" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="50.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="depPane" layoutX="126.0" layoutY="52.0" prefHeight="557.0" prefWidth="598.0" />
+   </children>
+</AnchorPane>

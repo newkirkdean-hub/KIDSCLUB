@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="683.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.SearchMemberViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="117.0" layoutY="-1.0" prefHeight="683.0" prefWidth="861.0" spacing="20.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+         </padding>
+         <children>
+            <Pane prefHeight="242.0" prefWidth="560.0" styleClass="editPane">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="513.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="161.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="132.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="118.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="103.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="47.0" prefWidth="158.0" text="First Name" />
+                        <Label layoutX="10.0" layoutY="33.0" prefHeight="41.0" prefWidth="163.0" text="Last Name" GridPane.rowIndex="1" />
+                        <Label prefHeight="45.0" prefWidth="159.0" text="BirthDate" GridPane.rowIndex="2" />
+                        <TextField fx:id="nameFTextfield" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameLTextfield" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="bday1Textfield" maxWidth="-Infinity" prefHeight="25.0" prefWidth="75.0" promptText="Month" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="143.0" prefHeight="45.0" prefWidth="159.0" text="Employee Number" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="empTextfield" maxWidth="-Infinity" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="158.0" text="Phone Number" GridPane.rowIndex="3" />
+                        <TextField fx:id="ph1Textfield" layoutX="168.0" layoutY="98.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="75.0" promptText="Area Code" text="208" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="bday2Textfield" layoutX="170.0" layoutY="98.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="75.0" promptText="Day" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="bday3Textfield" layoutX="316.0" layoutY="98.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="82.0" promptText="Year" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="ph2Textfield" layoutX="170.0" layoutY="138.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="75.0" promptText="Prefix" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="ph3Textfield" layoutX="170.0" layoutY="138.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="83.0" promptText="Line Number" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="datePicker" editable="false" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <HBox fx:id="searchBar" prefHeight="35.0" prefWidth="560.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label fx:id="errorLabel" prefHeight="19.0" prefWidth="673.0" />
+               </children>
+            </HBox>
+            <Pane fx:id="tablePane" prefHeight="283.0" prefWidth="669.0" styleClass="hBoxPane1">
+               <children>
+                  <TableView fx:id="memberTable" layoutX="29.0" layoutY="14.0" onKeyPressed="#keyListener" onMouseClicked="#memberTableSelected" prefHeight="251.0" prefWidth="812.0">
+                    <columns>
+                      <TableColumn fx:id="memberNameFColumn" prefWidth="104.0" text="First Name" />
+                      <TableColumn fx:id="memberNameLColumn" prefWidth="137.0" text="Last Name" />
+                        <TableColumn fx:id="memberBdateColumn" prefWidth="113.0" text="BirthDate" />
+                        <TableColumn fx:id="memberPhoneColumn" prefWidth="114.0" text="Phone" />
+                        <TableColumn fx:id="memberAddressColumn" prefWidth="271.0" text="Address" />
+                        <TableColumn fx:id="memberCCNColumn" prefWidth="72.0" text="CCN" />
+                    </columns>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#GOCancelButton" text="Cancel (ESC)" />
+                  <Button fx:id="resetButton" mnemonicParsing="false" onAction="#GOResetButton" text="Reset F2" />
+                  <Button fx:id="selectButton" mnemonicParsing="false" onAction="#GOSelectButton" text="Print F8" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#GOSearchButton" text="Search F6" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="822.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.WeekDaysController">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="468.0" prefWidth="1135.0" styleClass="table-view-noscroll">
+        <columns>
+          <TableColumn fx:id="Day" editable="false" prefWidth="102.0" text="WeekDay" />
+            <TableColumn fx:id="ScreenPrompt" prefWidth="173.0" text="Screen Prompt" />
+            <TableColumn fx:id="Initials" prefWidth="69.0" text="Initials" />
+            <TableColumn fx:id="Tickets" prefWidth="70.0" text="Tickets" />
+            <TableColumn fx:id="Multiply" prefWidth="89.0" text="Multiplyer" />
+            <TableColumn fx:id="Bonus" prefWidth="58.0" text="Bonus" />
+            <TableColumn fx:id="StartDate" prefWidth="96.0" text="Start Date" />
+            <TableColumn fx:id="EndDate" prefWidth="84.0" text="End Date" />
+            <TableColumn fx:id="Repeat" prefWidth="62.0" text="Repeat" />
+            <TableColumn fx:id="Max" prefWidth="137.0" text="Min/Max" />
+            <TableColumn fx:id="stTime" prefWidth="104.0" text="StartTime" />
+            <TableColumn fx:id="endTime" prefWidth="88.0" text="EndTime" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="25.0" layoutY="505.0" prefHeight="47.0" prefWidth="1135.0" styleClass="recBox">
+         <children>
+            <TextField fx:id="lField" editable="false" prefHeight="39.0" prefWidth="114.0" promptText="Promo Name" />
+            <TextField fx:id="screenPrompt" alignment="CENTER" layoutX="206.0" layoutY="10.0" prefHeight="39.0" prefWidth="155.0" promptText="Screen Prompt">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tinitials" alignment="CENTER" layoutX="303.0" layoutY="10.0" prefHeight="39.0" prefWidth="82.0" promptText="Initials">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tTickets" alignment="CENTER" prefHeight="39.0" prefWidth="65.0" promptText="Tickets">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></TextField>
+            <TextField fx:id="tMultiplyer" alignment="CENTER" layoutX="235.0" layoutY="10.0" prefHeight="39.0" prefWidth="91.0" promptText="Multiplyer">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tOther" alignment="CENTER" layoutX="368.0" layoutY="10.0" prefHeight="39.0" prefWidth="60.0" promptText="Percentage">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <VBox prefHeight="54.0" prefWidth="100.0">
+               <children>
+                  <DatePicker fx:id="dStart" prefHeight="39.0" prefWidth="106.0" />
+               </children>
+            </VBox>
+            <DatePicker fx:id="dEnd" prefHeight="39.0" prefWidth="107.0" />
+            <TextField fx:id="tRepeat" alignment="CENTER" prefHeight="39.0" prefWidth="61.0" promptText="Repeatable">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tMax" alignment="CENTER" prefHeight="39.0" prefWidth="135.0" promptText="Min / Max">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tStTime" alignment="CENTER" prefHeight="39.0" prefWidth="75.0" promptText="Start Time">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="tEndTime" alignment="CENTER" layoutX="931.0" layoutY="10.0" prefHeight="39.0" prefWidth="75.0" promptText="End Time">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="614.0" prefHeight="39.0" prefWidth="465.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="490.0" layoutY="769.0" prefHeight="39.0" prefWidth="595.0" />
+   </children>
+</AnchorPane>

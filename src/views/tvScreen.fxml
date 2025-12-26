@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.tvScreenController">
+   <children>
+      <HBox prefHeight="36.0" prefWidth="687.0" styleClass="titeHBox" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="menuItemsLabel" alignment="CENTER" onMouseEntered="#menuItemsButtonMouseOver" prefHeight="36.0" prefWidth="151.0" style="-fx-font-weight: Bold;" styleClass="recBoxLabel" text="Menu" />
+            <Label fx:id="tvNameLabel" prefHeight="36.0" prefWidth="383.0" text="- -" />
+         </children>
+      </HBox>
+      <Pane fx:id="depPane" layoutY="36.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+      <Button fx:id="vButton" disable="true" focusTraversable="false" layoutX="48.0" layoutY="57.0" mnemonicParsing="false" text="v" visible="false" />
+      <WebView fx:id="webView" focusTraversable="false" layoutY="36.0" prefHeight="403.0" prefWidth="600.0" />
+   </children>
+</AnchorPane>

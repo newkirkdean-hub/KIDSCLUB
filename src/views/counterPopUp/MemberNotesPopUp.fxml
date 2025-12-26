@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="480.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.counterPopUp.MemberNotesPopUpController">
+   <children>
+      <Button fx:id="cancelButton" layoutX="249.0" layoutY="339.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Cancel (ESC)" />
+      <Button fx:id="printButton" layoutX="61.0" layoutY="339.0" mnemonicParsing="false" onAction="#printButtonPushed" prefHeight="70.0" prefWidth="166.0" text="Save F6" />
+      <Label layoutX="37.0" layoutY="54.0" prefHeight="54.0" prefWidth="153.0" text="Member Name:" />
+      <TextArea fx:id="notesTF" layoutX="32.0" layoutY="139.0" prefHeight="185.0" prefWidth="426.0" wrapText="true" />
+      <Label layoutX="37.0" layoutY="108.0" prefHeight="31.0" prefWidth="153.0" text="Notes" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="389.0" />
+      <Label fx:id="purposeTF" layoutX="190.0" layoutY="66.0" prefHeight="31.0" prefWidth="221.0" />
+   </children>
+</AnchorPane>

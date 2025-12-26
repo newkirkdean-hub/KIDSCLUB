@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="680.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settings.BonusTableController">
+   <children>
+      <TableView fx:id="cTable" editable="true" layoutX="25.0" layoutY="22.0" onMouseClicked="#tableItemSelected" prefHeight="349.0" prefWidth="593.0" styleClass="table-view-noscroll">
+        <columns>
+          <TableColumn fx:id="C1" editable="false" prefWidth="142.0" text="AtLeast" />
+          <TableColumn fx:id="C2" prefWidth="148.0" text="LessThan" />
+            <TableColumn fx:id="C3" prefWidth="145.0" text="Percent" />
+            <TableColumn fx:id="C4" editable="false" prefWidth="156.0" text="Tueday" />
+        </columns>
+      </TableView>
+      <HBox fx:id="hbox" layoutX="22.0" layoutY="474.0" prefHeight="59.0" prefWidth="593.0" styleClass="recBox">
+         <children>
+            <TextField fx:id="c1L" alignment="CENTER" prefHeight="39.0" prefWidth="125.0" promptText="AtLeast" />
+            <TextField fx:id="c2T" alignment="CENTER" prefHeight="39.0" prefWidth="165.0" promptText="LessThan">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <TextField fx:id="c3T" alignment="CENTER" prefHeight="39.0" prefWidth="153.0" promptText="Percent">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></TextField>
+            <TextField fx:id="c4T" alignment="CENTER" prefHeight="39.0" prefWidth="149.0" promptText="Tueday" />
+         </children>
+      </HBox>
+      <HBox layoutY="542.0" prefHeight="49.0" prefWidth="690.0" spacing="20.0">
+         <children>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="87.0" text="Update" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <Pane fx:id="errorPane" layoutX="22.0" layoutY="617.0" prefHeight="59.0" prefWidth="770.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="14.0" layoutY="2.0" prefHeight="49.0" prefWidth="748.0" text="Label" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

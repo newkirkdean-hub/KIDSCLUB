@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="847.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.timeclock.EmpViewerController">
+   <children>
+      <TabPane fx:id="EmployeeTabPane" layoutY="37.0" prefHeight="733.0" prefWidth="1081.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab closable="false" text="   Employee Info      ">
+               <content>
+                  <AnchorPane id="AnchorPane" fx:id="EmployeePane" onKeyPressed="#keyListener" prefHeight="773.0" prefWidth="800.0">
+                     <children>
+                        <Pane fx:id="gridPane2" layoutX="37.0" layoutY="23.0" prefHeight="581.0" prefWidth="899.0" styleClass="editPane">
+                           <children>
+                                    <GridPane fx:id="gridPane1" layoutX="37.0" layoutY="2.0" prefHeight="565.0" prefWidth="725.0" snapToPixel="false">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="151.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.0" minWidth="10.0" prefWidth="275.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="271.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label onMouseClicked="#showEmpNumber" prefHeight="28.0" prefWidth="179.0" styleClass="recBoxLabel" text="Employee Number">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <Label layoutX="10.0" layoutY="15.0" prefHeight="28.0" prefWidth="178.0" styleClass="recBoxLabel" text="First Name" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <TextField fx:id="tfFName" layoutX="132.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label prefHeight="28.0" prefWidth="164.0" styleClass="recBoxLabel" text="Last Name" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <TextField fx:id="tfLName" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="tfAddress" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="tfCity" layoutX="132.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label layoutX="10.0" layoutY="91.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Address" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <Label layoutX="10.0" layoutY="129.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="City" GridPane.rowIndex="5">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <Label layoutX="10.0" layoutY="185.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="State" GridPane.rowIndex="6">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <TextField fx:id="tfState" layoutX="132.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextField fx:id="tfEmpNumber" disable="true" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: lightgray;" GridPane.columnIndex="1">
+                     
+                  </TextField>
+                                    <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Zip Code" GridPane.rowIndex="7">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfZip" layoutX="126.0" layoutY="229.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Birth Date" GridPane.rowIndex="13">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                          <DatePicker fx:id="dpBDate" prefHeight="25.0" prefWidth="154.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                    <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Hire Date" GridPane.rowIndex="14">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfHireDate" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                                    <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Home Phone" GridPane.rowIndex="8">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Cell Phone" GridPane.rowIndex="10">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfPhoneHome" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <TextField fx:id="tfPhoneCell" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                    <TextField fx:id="tfSocSec" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                    <Label prefHeight="28.0" prefWidth="147.0" styleClass="recBoxLabel" text="Soc Sec Number" GridPane.rowIndex="12">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="dropBoxLocation" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Location" GridPane.columnIndex="2" />
+                                    <TextField fx:id="dropBoxWageStatus" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Wage Status" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <TextField fx:id="dropBoxShirtSize" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Shirt Size" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <TextField fx:id="dropBoxStatus" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Status" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <TextField fx:id="dropBoxTitle" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Title" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                    <TextField fx:id="dropBoxGender" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="25.0" prefWidth="247.0" promptText="Gender" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                    <Label prefHeight="28.0" prefWidth="164.0" styleClass="recBoxLabel" text="Middle Name" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfMName" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="lastUpdate" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="115.0" promptText="Last Update" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                                    <TextField fx:id="voucher" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" promptText="Voucher" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                    <TextField fx:id="tEmailAddress" accessibleText="Email Address" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#mouseClick" prefHeight="40.0" prefWidth="368.0" promptText="Email Address" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                    <ImageView fx:id="imageView" fitHeight="184.0" fitWidth="224.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                       </children>
+                                    </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="   Employee Notes      ">
+              <content>
+                <AnchorPane fx:id="NotesPane" minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="1081.0">
+                     <children>
+                        <TableView fx:id="detailTable" layoutX="9.0" layoutY="14.0" onMouseClicked="#clickDetailTable" prefHeight="519.0" prefWidth="1064.0">
+                          <columns>
+                            <TableColumn fx:id="cPurpose" prefWidth="99.0" text="Purpose" />
+                            <TableColumn fx:id="cPoints" prefWidth="67.0" text="Points" />
+                              <TableColumn fx:id="cDepartment" prefWidth="104.0" text="Department" />
+                              <TableColumn fx:id="cPayRate" prefWidth="76.0" text="Pay Rate" />
+                              <TableColumn fx:id="cMGR" prefWidth="73.0" text="MGR" />
+                              <TableColumn fx:id="cDate" prefWidth="75.0" text="Date" />
+                              <TableColumn fx:id="cTime" prefWidth="68.0" text="Time" />
+                              <TableColumn fx:id="cNotes" prefWidth="500.0" text="Note" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="   Training Levels      ">
+              <content>
+                <AnchorPane fx:id="TrainingPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="gridPane3" hgap="10.0" layoutX="14.0" layoutY="14.0" prefHeight="676.0" prefWidth="952.0" vgap="10.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Greater Than 10K / EMP MSG" />
+                                    <RadioButton fx:id="intercard2" layoutX="97.0" layoutY="89.0" mnemonicParsing="false" text="EMP MSG" />
+                                    <RadioButton fx:id="intercardNO" layoutX="96.0" layoutY="142.0" mnemonicParsing="false" text="No Access" />
+                                    <RadioButton fx:id="intercard1" layoutX="97.0" layoutY="115.0" mnemonicParsing="false" text="GT10K" />
+                                    <RadioButton fx:id="intercard3" layoutX="96.0" layoutY="58.0" mnemonicParsing="false" text="Both" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Employee Files" />
+                                    <RadioButton fx:id="eFilesYES" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" text="Allow Access" />
+                                    <RadioButton fx:id="eFilesNO" layoutX="97.0" layoutY="116.0" mnemonicParsing="false" text="No Access" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Corp Data Files" />
+                                    <RadioButton fx:id="corpYES" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" text="Allow Access" />
+                                    <RadioButton fx:id="corpNO" layoutX="97.0" layoutY="115.0" mnemonicParsing="false" text="No Access" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Reservations" />
+                                    <RadioButton fx:id="reservations1" layoutX="72.0" layoutY="79.0" mnemonicParsing="false" text="Add / Edit / Move" />
+                                    <RadioButton fx:id="reservations2" layoutX="72.0" layoutY="106.0" mnemonicParsing="false" text="Edit Notes" />
+                                    <RadioButton fx:id="reservations3" layoutX="72.0" layoutY="136.0" mnemonicParsing="false" text="View Only" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Corp Deposit Files" />
+                                    <RadioButton fx:id="cDepositsYES" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" text="Allow Access" />
+                                    <RadioButton fx:id="cDepositsNO" layoutX="97.0" layoutY="119.0" mnemonicParsing="false" text="No Access" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Member Files" />
+                                    <RadioButton fx:id="bCarsYES" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" text="Allow Access" />
+                                    <RadioButton fx:id="bCarsNO" layoutX="97.0" layoutY="117.0" mnemonicParsing="false" text="No Access" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Active Status" />
+                                    <RadioButton fx:id="active4" layoutX="53.0" layoutY="70.0" mnemonicParsing="false" text="Dep's / With's / New Members" />
+                                    <RadioButton fx:id="active2" layoutX="53.0" layoutY="136.0" mnemonicParsing="false" text="Club Deposits" />
+                                    <RadioButton fx:id="active1" layoutX="53.0" layoutY="167.0" mnemonicParsing="false" text="No Longer Active" />
+                                    <RadioButton fx:id="active3" layoutX="53.0" layoutY="106.0" mnemonicParsing="false" text="Deposits / WithDrawals" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Game Problems" />
+                                    <RadioButton fx:id="gProblems3" layoutX="90.0" layoutY="86.0" mnemonicParsing="false" text="Add / Edit / Delete" />
+                                    <RadioButton fx:id="gProblems2" layoutX="90.0" layoutY="115.0" mnemonicParsing="false" text="Add / Edit" />
+                                    <RadioButton fx:id="gProblems1" layoutX="90.0" layoutY="144.0" mnemonicParsing="false" text="Add Only" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="hBoxPane1" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="44.0" prefWidth="278.0" text="Access to Time Clock" />
+                                    <RadioButton fx:id="tClockYES" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" text="Allow Access" />
+                                    <RadioButton fx:id="tClockNO" layoutX="97.0" layoutY="116.0" mnemonicParsing="false" text="No Access" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <VBox layoutX="1092.0" layoutY="95.0" prefHeight="406.0" prefWidth="104.0" spacing="20.0">
+         <children>
+            <Button fx:id="newRecButton" focusTraversable="false" mnemonicParsing="false" onAction="#newRecButtonPressed" prefHeight="40.0" prefWidth="99.0" text="New F6" />
+            <Button fx:id="searchButton" focusTraversable="false" mnemonicParsing="false" onAction="#LookUpButtonPressed" prefHeight="40.0" prefWidth="99.0" text="Search F7" />
+            <Button fx:id="editButton" focusTraversable="false" mnemonicParsing="false" onAction="#editButtonGo" prefHeight="40.0" prefWidth="99.0" text="Edit F9" />
+            <Button fx:id="moreButton" focusTraversable="false" mnemonicParsing="false" onMouseEntered="#menuItemsButtonMouseOver" prefHeight="40.0" prefWidth="99.0" text="More . . ." />
+            <Button fx:id="DocsButton" focusTraversable="false" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#GOEmpDocs" prefHeight="40.0" prefWidth="99.0" text="Docs" />
+            <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="99.0" text="Exit (ESC)" />
+         </children>
+      </VBox>
+      <TextField fx:id="tfFLName" layoutX="38.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="274.0" />
+      <Pane fx:id="errorPane" layoutX="52.0" layoutY="610.0" prefHeight="221.0" prefWidth="964.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="8.0" layoutY="5.0" prefHeight="184.0" prefWidth="945.0" wrapText="true">
+               <font>
+                  <Font size="8.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

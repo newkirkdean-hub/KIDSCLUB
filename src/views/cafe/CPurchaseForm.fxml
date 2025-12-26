@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="764.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.cafe.CPurchaseFormController">
+   <children>
+      <Pane prefHeight="713.0" prefWidth="1004.0">
+         <children>
+            <Label fx:id="scrollTextLable" alignment="CENTER" layoutX="907.0" layoutY="582.0" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: yellow; -fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: center;" styleClass="editPane" text="sdfsd">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="8.0" />
+               </padding>
+            </Label>
+            <Button fx:id="reOrderButton" focusTraversable="false" layoutX="492.0" layoutY="48.0" mnemonicParsing="false" onAction="#ReButtonPushed" prefHeight="56.0" prefWidth="126.0" text="Reorder F1" />
+            <Button fx:id="exitButton" focusTraversable="false" layoutX="492.0" layoutY="121.0" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="36.0" prefWidth="396.0" text="Exit (ESC)" />
+            <GridPane layoutX="45.0" layoutY="76.0" prefHeight="284.0" prefWidth="346.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label layoutX="10.0" layoutY="317.0" prefHeight="38.0" prefWidth="173.0" text="Item Name" />
+                  <Label layoutX="10.0" layoutY="13.0" prefHeight="38.0" prefWidth="173.0" text="Vendor" GridPane.rowIndex="1" />
+                  <Label layoutX="10.0" layoutY="57.0" prefHeight="38.0" prefWidth="173.0" text="Department" GridPane.rowIndex="2" />
+                  <Label layoutX="10.0" layoutY="101.0" prefHeight="38.0" prefWidth="173.0" text="Class" GridPane.rowIndex="3" />
+                  <Label layoutX="10.0" layoutY="145.0" prefHeight="38.0" prefWidth="173.0" text="Class II" GridPane.rowIndex="4" />
+                  <Label layoutX="10.0" layoutY="188.0" prefHeight="38.0" prefWidth="173.0" text="Class III" GridPane.rowIndex="5" />
+                  <Label layoutX="10.0" layoutY="231.0" prefHeight="38.0" prefWidth="173.0" text="Class IIII" GridPane.rowIndex="6" />
+                  <Label layoutX="10.0" layoutY="253.0" prefHeight="38.0" prefWidth="173.0" text="Ticket Price" GridPane.rowIndex="7" />
+                  <TextField fx:id="iItemName" prefHeight="31.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="iVendor" layoutX="183.0" layoutY="18.0" onMouseClicked="#handle" onMouseEntered="#handle" prefHeight="31.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="iDepartment" layoutX="183.0" layoutY="59.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="iClass" layoutX="183.0" layoutY="100.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="iClassII" layoutX="183.0" layoutY="140.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="iClassIII" layoutX="183.0" layoutY="180.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="iClassIIII" layoutX="183.0" layoutY="220.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="iTicketPrice" layoutX="183.0" layoutY="260.0" onMouseClicked="#handle" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+            </GridPane>
+            <Pane fx:id="iItemNumberPane" layoutX="14.0" layoutY="14.0" prefHeight="56.0" prefWidth="460.0" styleClass="editPane">
+               <children>
+                  <Label fx:id="jLabel1" layoutX="14.0" layoutY="11.0" prefHeight="34.0" prefWidth="137.0" text="Cafe Item Number" />
+                  <TextField fx:id="iItemNumber" focusTraversable="false" layoutX="164.0" layoutY="9.0" onMouseClicked="#handle" prefHeight="38.0" prefWidth="249.0" />
+               </children>
+            </Pane>
+            <Button fx:id="newOrderButton" focusTraversable="false" layoutX="628.0" layoutY="48.0" mnemonicParsing="false" onAction="#NewButtonPushed" prefHeight="56.0" prefWidth="126.0" text="New Item F7" />
+            <Button fx:id="doButton11" focusTraversable="false" layoutX="763.0" layoutY="48.0" mnemonicParsing="false" onAction="#SetAction" prefHeight="56.0" prefWidth="126.0" text="Click Here" />
+            <Button fx:id="searchButton" focusTraversable="false" layoutX="492.0" layoutY="169.0" mnemonicParsing="false" onAction="#SearchButtonPressed" prefHeight="36.0" prefWidth="396.0" text="F3 Item Look Up" />
+            <Pane layoutX="14.0" layoutY="360.0" prefHeight="342.0" prefWidth="437.0" styleClass="editPane">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="15.0" prefHeight="322.0" prefWidth="407.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Date" />
+                        <DatePicker fx:id="iPurchaseDate" prefHeight="31.0" GridPane.columnIndex="1" />
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Invoice Number" GridPane.rowIndex="1" />
+                        <TextField fx:id="iInvoiceNumber" onMouseClicked="#getLastInvoice" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Number of Units" GridPane.rowIndex="2" />
+                        <TextField fx:id="iNumberOfUnits" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Unit Type" GridPane.rowIndex="3" />
+                        <TextField fx:id="iUnitType" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Price Per Unit" GridPane.rowIndex="4" />
+                        <TextField fx:id="iPricePerUnit" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="38.0" prefWidth="173.0" text="Total" GridPane.rowIndex="5" />
+                        <TextField fx:id="iTotal" prefHeight="31.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <CheckBox fx:id="prtLabel" mnemonicParsing="false" prefHeight="32.0" prefWidth="206.0" text="Print Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <CheckBox fx:id="inventoryCountCheckBox" layoutX="214.0" layoutY="210.0" mnemonicParsing="false" onAction="#inventoryCheckBoxSelected" prefHeight="32.0" prefWidth="206.0" text="Inventory Count" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <CheckBox fx:id="priceChangeCheckBox" focusTraversable="false" mnemonicParsing="false" prefHeight="32.0" prefWidth="206.0" text="Price Change" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <CheckBox fx:id="metersCheckBox" focusTraversable="false" layoutX="214.0" layoutY="256.0" mnemonicParsing="false" onAction="#metersCheckBoxSelected" prefHeight="32.0" prefWidth="206.0" text="Meters" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Button fx:id="reportButton" focusTraversable="false" layoutX="493.0" layoutY="218.0" mnemonicParsing="false" onAction="#reportButtonPushed" prefHeight="36.0" prefWidth="192.0" text="Counted Report" />
+            <Button fx:id="merchandizerReportButton" focusTraversable="false" layoutX="492.0" layoutY="309.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="192.0" text="Merchandizers Single" visible="false" />
+            <TableView fx:id="inventoryTable" layoutX="504.0" layoutY="368.0" onMouseClicked="#tableItemClicked" prefHeight="351.0" prefWidth="362.0">
+              <columns>
+                <TableColumn fx:id="ItemLastScanned" editable="false" prefWidth="280.0" resizable="false" text="Item Last Scanned" />
+                  <TableColumn fx:id="QTY" editable="false" resizable="false" text="QTY" />
+              </columns>
+            </TableView>
+            <Button fx:id="NOTCountedreportButton" focusTraversable="false" layoutX="493.0" layoutY="263.0" mnemonicParsing="false" onAction="#NOTCountedreportButtonPushed" prefHeight="36.0" prefWidth="396.0" text="Not Counted" />
+            <Button fx:id="lastItemButton" focusTraversable="false" layoutX="440.0" layoutY="24.0" mnemonicParsing="false" onAction="#lastItemButtonPushed" prefHeight="36.0" prefWidth="24.0" />
+            <Button fx:id="invoiceReport" focusTraversable="false" layoutX="697.0" layoutY="218.0" mnemonicParsing="false" onAction="#invoiceReportButtonPushed" prefHeight="36.0" prefWidth="192.0" text="invoice Report" />
+            <Button fx:id="merchandizerReportButtonALL" focusTraversable="false" layoutX="697.0" layoutY="309.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="192.0" text="Merchandizers All" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="errorPane" layoutY="701.0" prefHeight="63.0" prefWidth="1004.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="29.0" layoutY="12.0" prefHeight="40.0" prefWidth="949.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

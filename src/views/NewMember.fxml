@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" onKeyPressed="#keyListener" prefHeight="764.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.NewMemberController">
+   <children>
+      <Pane fx:id="bottomPane" layoutY="160.0" prefHeight="495.0" prefWidth="554.0" styleClass="editPane">
+         <children>
+                  <GridPane fx:id="gridPane1" layoutX="37.0" layoutY="4.0" prefHeight="306.0" prefWidth="473.0" snapToPixel="false">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="78.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="304.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="91.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Card Number">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <Label layoutX="10.0" layoutY="15.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="First Name" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <TextField fx:id="fNameTextfield" layoutX="132.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Last Name" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <TextField fx:id="lNameTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="addressTextfield" layoutX="132.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="cityTextfield" layoutX="132.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="158.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label layoutX="10.0" layoutY="91.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Address" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <Label layoutX="10.0" layoutY="129.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="City" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <Label layoutX="10.0" layoutY="185.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="State" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                        <TextField fx:id="stateTextfield" layoutX="132.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Zip Code" GridPane.rowIndex="6">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="zipTextfield" layoutX="126.0" layoutY="229.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <PasswordField fx:id="cardNumberTextfield" disable="true" editable="false" focusTraversable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="aptTextFeild" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="APT #" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                     </children>
+                  </GridPane>
+            <GridPane fx:id="gridPane3" layoutX="37.0" layoutY="310.0" prefHeight="71.0" prefWidth="412.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="146.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="77.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="112.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Phone">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="phone1Textfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="57.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="phone2Textfield" layoutX="120.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="63.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="phone3Textfield" layoutX="230.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="66.0" GridPane.columnIndex="3" />
+                  <Label prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Birth Date" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="bday1Textfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="57.0" promptText="Month" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="bday2Textfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="63.0" promptText="Day" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="bday3Textfield" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="65.0" promptText="Year" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Label layoutX="37.0" layoutY="396.0" prefHeight="28.0" prefWidth="99.0" styleClass="recBoxLabel" text="Email">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="emailTextfield" layoutX="187.0" layoutY="398.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="310.0">
+               <font>
+                  <Font size="17.0" />
+               </font></TextField>
+            <Label layoutX="37.0" layoutY="444.0" prefHeight="28.0" prefWidth="152.0" styleClass="recBoxLabel" text="Employee Number">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <PasswordField fx:id="employeeNumber" layoutX="187.0" layoutY="446.0" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Pane>
+      <VBox layoutX="593.0" layoutY="160.0" prefHeight="126.0" prefWidth="104.0" spacing="20.0">
+         <children>
+                  <Button fx:id="postButton" focusTraversable="false" mnemonicParsing="false" onAction="#postButtonGO" prefHeight="40.0" prefWidth="99.0" text="Post F6" />
+                  <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonPushed" prefHeight="40.0" prefWidth="99.0" text="Exit (ESC)" />
+         </children>
+      </VBox>
+      <Pane fx:id="topPane" layoutY="2.0" prefHeight="137.0" prefWidth="412.0">
+         <children>
+            <GridPane layoutX="52.0" layoutY="12.0" prefHeight="114.0" prefWidth="284.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="236.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="270.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="33.0" prefWidth="192.0" text="Scan Card Once" />
+                  <Label prefHeight="30.0" prefWidth="192.0" text="Scan Card Again" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="card1Field" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="card2Field" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane fx:id="errorBar" layoutX="14.0" layoutY="646.0" prefHeight="71.0" prefWidth="697.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="10.0" layoutY="11.0" prefHeight="48.0" prefWidth="681.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="depositPane" layoutX="383.0" layoutY="2.0" prefHeight="137.0" prefWidth="328.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="12.0" prefHeight="169.0" prefWidth="284.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="361.0" minWidth="10.0" prefWidth="144.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="33.0" prefWidth="192.0" text="Deposit Tickets" />
+                  <TextField fx:id="ticketsTextfield" alignment="CENTER" prefHeight="47.0" prefWidth="144.0" GridPane.columnIndex="1" />
+                  <Label prefHeight="33.0" prefWidth="192.0" text="Bonus" GridPane.rowIndex="1" />
+                  <TextField fx:id="bonusTickets" alignment="CENTER" focusTraversable="false" prefHeight="47.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="wwLabel" prefHeight="33.0" prefWidth="192.0" text="Wild Wed" GridPane.rowIndex="2" />
+                  <TextField fx:id="wildWedTickets" alignment="CENTER" focusTraversable="false" prefHeight="47.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
