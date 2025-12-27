@@ -79,6 +79,21 @@ Table name: MembersDetail
 
 (For full data dictionary use docs/DATA_DICTIONARY.md)
 
+
+##Schema files location and notes:
+- All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
+- Each subsystem gets its own subfolder, for example:
+  - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
+  - `db/schema/counterfx/` — COUNTERFX schema files
+  - `db/schema/members/`, `db/schema/sales/`, etc. for other domains
+- File naming convention: use `<subsystem>_schema.sql` for DDL, and `README.md` alongside it to document mapping notes and import guidance.
+- Files are committed to the `master` branch for easy retrieval. If you prefer them in a feature branch during development, mention the branch name.
+- Current files present:
+  - `db/schema/copr/copr_schema.sql`
+  - `db/schema/copr/README.md`
+
+
+
 ## Current business logic implemented outside DB
 All Queries are run from code none are stored or run from the MSACCESS Database.
 Reports: "Reports will be the last thing tackled".
