@@ -15,9 +15,7 @@ Change log:
 - there should not be any down time during cutover as testing will continue until we have all the bugs fixed.
 - browser support list (IE, Google Chrome, Brave).
 
-# KIDSCLUB Migration Context & Working Notes
-
-Schema files location and notes:
+## Schema files location and notes:
 - All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
 - Each subsystem gets its own subfolder, for example:
   - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
@@ -80,7 +78,7 @@ Table name: MembersDetail
 (For full data dictionary use docs/DATA_DICTIONARY.md)
 
 
-##Schema files location and notes:
+## Schema files location and notes:
 - All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
 - Each subsystem gets its own subfolder, for example:
   - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
