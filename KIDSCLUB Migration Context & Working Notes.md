@@ -12,6 +12,11 @@ Change log:
 
 ## Overall goal 
 - To migrate "KIDSCLUB" to a local network web service + PostgreSQL while keeping user functionality and appearance as close to the same as is current. Migrate corp2 into same source files as the rest[...]
+- Target cutover June 2026
+- there should not be any down time during cutover as testing will continue until we have all the bugs fixed.
+- browser support list (IE, Google Chrome, Brave).
+
+
 
 ## Names
 - Top-level program will be referred to as KIDSCLUB; this is the all-inclusive program of the two branches COUNTERFX and CORP2.
@@ -21,13 +26,19 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 - Most of this Naming is for the owners needs so he can communicate to you. 
 
 ## Where the Access DB lives (non-secret pointer)
+- "Microsoft Access Driver (*.accdb)"
+- Access Database Engine 2016
 - File path (local/dev): /**-NET-DRIVE/clubdb
 - Shared location on local computer in our office, backup copies are on owners home computer and owner will provide table descriptions in text format.
 
 ## How to run the existing app (short)
-- JDK version:
+- JDK version: “JDK 25.0.1”
 - Build command: `./ANT`
-- Run command: `java -jar Local-Jar-Files/corp2/dist/corp2.jar` AND `java -jar Local-Jar-Files/counterFX/dist/counterFX.jar`
+- Run command:
+    • java -jar Local-Jar-Files/corp2/dist/corp2.jar
+    • java -jar Local-Jar-Files/counterFX/dist/counterFX.jar
+- Testing, Owner has complete version at home for design and testing. This is how any future testing will be done.
+
 
 ## Important source files & entry points
 - Main class: COUNTERFX and CORP2 (two programs; COUNTERFX is mostly dependent on JavaFX and CORP2 uses Swing)
@@ -36,21 +47,25 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## High-level data model
 - Number of tables: 38
-- Most important tables: Members, Inventory, Timeclock, Sales, Emails, Member Mail. 
+- Most important tables: Members, Inventory, Timeclock, Sales, Emails, Member Mail.
+- Tables themselves do not maintain referential integrety, The code will keep this. The only referenatial integrety is in the
+    • Members Table
+    • MembersDetail Table
+- Referenatial integrity will be explored more when we get to that issue.
 
 ## Table-level notes (short per-table summary)
 - Table name: Members
-  - Rows (Current): 20,000 (100 new Members per Month avg.)
-  - Usage: read-heavy; few writes/day
-  - Sensitive columns: Member Number, Member ID, 
-  - Migration note: preserve autonumber customer_id; emails have some NULLs; create unique index on email after cleanup.
+  • Rows (Current): 20,000 (100 new Members per Month avg.)
+  • Usage: read-heavy; few writes/day
+  • Sensitive columns: Member Number, Member ID, 
+  • Migration note: preserve autonumber customer_id; emails have some NULLs; create unique index on email after cleanup.
 
-- Table name: Memtick
-  - Rows (est): 20,000 - 50,000 in 4 month period, we clean the detail records once they exceed 40,000+
-  - Usage: read-heavy; Most writes/day of all tables
-  - Sensitive columns: Member ID (Keyed To Members), 
-  - Tables MEMBERS and MEMTICK both must balance. MEMBERS has a single field Balance which is the total added and subtracted of all the detail. These are the only tables that must stay balanced like t[...]
-
+- Table name: MembersDetail
+  • Rows (est): 20,000 - 50,000 in 4 month period, we clean the detail records once they exceed 40,000+
+  • Usage: read-heavy; Most writes/day of all tables
+  • Sensitive columns: Member ID (Keyed To Members), 
+  • Tables MEMBERS and MEMBERSDETAIL both must balance. MEMBERS has a single field "Balance" which is the total added and subtracted of all the MEMBERSDETAIL. These are the only tables that must stay balanced like t[...]
+(Future link to MEMBERS and MEMBERSDETAIL balance page)
 
 (For full data dictionary use docs/DATA_DICTIONARY.md)
 
@@ -84,8 +99,8 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## How to use this file with the assistant
 - When you want me to review/update context, either:
-  - Paste the changed sections into chat; or
-  - Tell me to "Please read CORP2_CONTEXT.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository.
+  • Paste the changed sections into chat; or
+  • Tell me to "Please read CORP2_CONTEXT.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository.
 - Keep "Last updated" current so I know which version to use.
 
 ## Next steps (example)
