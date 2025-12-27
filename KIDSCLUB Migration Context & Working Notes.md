@@ -84,7 +84,8 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 ## Migration priorities and constraints
 - Priority 1: Keep feel and look and functionality very similar. (CSS files)
 - Priority 2: Migrate in sections (This is one large program with many sub folders / programs)
-- Data volume estimate: 1.5 MB total
+- Cutover estimate is June, 2026
+- Data volume estimate: 2 MB total (Confirmed) Current in use DB.
 - Owner has full working system at home to test changes before implementing them in the Office Server. 
 - There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
 
