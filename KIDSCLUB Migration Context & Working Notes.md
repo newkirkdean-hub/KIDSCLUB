@@ -1,7 +1,19 @@
 # KIDSCLUB Migration Context & Working Notes
 
+Schema files location and notes:
+- All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
+- Each subsystem gets its own subfolder, for example:
+  - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
+  - `db/schema/counterfx/` — COUNTERFX schema files
+  - `db/schema/members/`, `db/schema/sales/`, etc. for other domains
+- File naming convention: use `<subsystem>_schema.sql` for DDL, and `README.md` alongside it to document mapping notes and import guidance.
+- Files are committed to the `master` branch for easy retrieval. If you prefer them in a feature branch during development, mention the branch name.
+- Current files present:
+  - `db/schema/copr/copr_schema.sql`
+  - `db/schema/copr/README.md`
+
 Version: 0.1  
-Last updated: 2025-12-26 
+Last updated: 2025-12-26  
 Author: Dean <newkirkdean@gmail.com> (GitHub: newkirkdean-hub)
 
 Change log:
@@ -55,57 +67,3 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## Table-level notes (short per-table summary)
 - Table name: Members
-  • Rows (Current): 20,000 (100 new Members per Month avg.)
-  • Usage: read-heavy; few writes/day
-  • Sensitive columns: Member Number, Member ID, 
-  • Migration note: preserve autonumber customer_id; emails have some NULLs; create unique index on email after cleanup.
-
-- Table name: MembersDetail
-  • Rows (est): 20,000 - 50,000 in 4 month period, we clean the detail records once they exceed 40,000+
-  • Usage: read-heavy; Most writes/day of all tables
-  • Sensitive columns: Member ID (Keyed To Members), 
-  • Tables MEMBERS and MEMBERSDETAIL both must balance. MEMBERS has a single field "Balance" which is the total added and subtracted of all the MEMBERSDETAIL. These are the only tables that must stay balanced like t[...]
-(Future link to MEMBERS and MEMBERSDETAIL balance page)
-
-(For full data dictionary use docs/DATA_DICTIONARY.md)
-
-## Current business logic implemented outside DB
-- All Queries are run from code none are stored or run from the MSACCESS Database.
-- Reports: "Reports will be the last thing tackled".
-
-## Known bugs / oddities
-- Currently the only consistent issue is dropping the connection to the tables. (Network issue) Solved with Database and code stored in same location.
-- Because we clean the tables after 40,000+ records in the Detail and through them into a history table that only get used maybe once a month we have stopped the tables from breaking and having to rep[...]
-
-## Security & compliance (summary)
-- Because we run only on a local network security is very simple at this time. We only use a valid user number that they type in and if valid in the database then they can use the system. Some users a[...]
-
-
-## Migration priorities and constraints
-- Priority 1: Keep feel and look and functionality very similar. (CSS files)
-- Priority 2: Migrate in sections (This is one large program with many sub folders / programs)
-- Cutover estimate is June, 2026
-- Data volume estimate: 2 MB total (Confirmed) Current in use DB.
-- Owner has full working system at home to test changes before implementing them in the Office Server. 
-- There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
-
-## Local Office Network
-- Topology is Peir to Peir connected thru Cat Cabling 
-- 1 Windows stores all files
-- 13 Windows User, 1 Mac User, 1 Windows Tablet.
-
-## Contacts
-- Owner: Dean <dean@example.com> (github: newkirkdean-hub)
-- Other contributors: NONE
-
-## How to use this file with the assistant
-- When you want me to review/update context, either:
-  • Paste the changed sections into chat; or
-  • Tell me to "Please read CORP2_CONTEXT.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository.
-- Keep "Last updated" current so I know which version to use.
-
-## Next steps (example)
-1. Fill docs/DATA_DICTIONARY.md with full column lists and row counts.
-2. Create docs/MIGRATION_PLAN.md with per-table migration approach.
-3. Add docs/SECURITY.md with roles and encryption/backups policy.
-<img width="925" height="1666" alt="image" src="https://github.com/user-attachments/assets/0953f8a9-071c-46e9-97e8-906715851ec9" />
