@@ -1,16 +1,3 @@
-# KIDSCLUB Migration Context & Working Notes
-
-Schema files location and notes:
-- All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
-- Each subsystem gets its own subfolder, for example:
-  - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
-  - `db/schema/counterfx/` — COUNTERFX schema files
-  - `db/schema/members/`, `db/schema/sales/`, etc. for other domains
-- File naming convention: use `<subsystem>_schema.sql` for DDL, and `README.md` alongside it to document mapping notes and import guidance.
-- Files are committed to the `master` branch for easy retrieval. If you prefer them in a feature branch during development, mention the branch name.
-- Current files present:
-  - `db/schema/copr/copr_schema.sql`
-  - `db/schema/copr/README.md`
 
 Version: 0.1  
 Last updated: 2025-12-26  
@@ -28,6 +15,19 @@ Change log:
 - there should not be any down time during cutover as testing will continue until we have all the bugs fixed.
 - browser support list (IE, Google Chrome, Brave).
 
+# KIDSCLUB Migration Context & Working Notes
+
+Schema files location and notes:
+- All database schema files, migration SQL, and related README or import scripts will be stored under the repository path `db/schema/`.
+- Each subsystem gets its own subfolder, for example:
+  - `db/schema/copr/` — COPR (current COPR Postgres schema and README)
+  - `db/schema/counterfx/` — COUNTERFX schema files
+  - `db/schema/members/`, `db/schema/sales/`, etc. for other domains
+- File naming convention: use `<subsystem>_schema.sql` for DDL, and `README.md` alongside it to document mapping notes and import guidance.
+- Files are committed to the `master` branch for easy retrieval. If you prefer them in a feature branch during development, mention the branch name.
+- Current files present:
+  - `db/schema/copr/copr_schema.sql`
+  - `db/schema/copr/README.md`
 
 
 ## Names
