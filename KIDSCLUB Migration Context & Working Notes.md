@@ -12,7 +12,7 @@ Change log:
 
 ## Overall goal 
 - To migrate "KIDSCLUB" to a local network web service + PostgreSQL while keeping user functionality and appearance as close to the same as is current. Migrate corp2 into same source files as the rest[...]
-- Target cutover June 2026
+- Target cutover June, 2026
 - there should not be any down time during cutover as testing will continue until we have all the bugs fixed.
 - browser support list (IE, Google Chrome, Brave).
 
