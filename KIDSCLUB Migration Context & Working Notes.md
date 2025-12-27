@@ -143,6 +143,6 @@ Because we run only on a local network security is very simple at this time. We 
 - We have made a "FirstTableMigration_Corp.md" in the master Directory
 - docker-compose.yml file is created
 - env.example is created
-- docker-entrypoint-initdb.create_corp is created
+- db/docker-entrypoint-initdb.d/001_create_copr.sql is created
 - link to the "FirstTableMigration_Corp.md" https://github.com/newkirkdean-hub/KIDSCLUB/blob/master/FirstTableMigration_CORP.md
 
