@@ -133,8 +133,16 @@ Because we run only on a local network security is very simple at this time. We 
 • Tell me to "Please read KIDSCLUB Migration Context & Working Notes.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository. KIDSCLUB Migration Context & Working Notes.md will also be refered to as "Context.md"
 - Keep "Last updated" current so I know which version to use.
 
-##Next steps (example)
+
+## Next steps (example)
 - Fill docs/DATA_DICTIONARY.md with full column lists and row counts.
 - Create docs/MIGRATION_PLAN.md with per-table migration approach.
 - Add docs/SECURITY.md with roles and encryption/backups policy.
+
+## First Step Completed
+- We have made a "FirstTableMigration_Corp.md" in the master Directory
+- docker-compose.yml file is created
+- env.example is created
+- docker-entrypoint-initdb.create_corp is created
+- link to the "FirstTableMigration_Corp.md" https://github.com/newkirkdean-hub/KIDSCLUB/blob/master/FirstTableMigration_CORP.md
 
