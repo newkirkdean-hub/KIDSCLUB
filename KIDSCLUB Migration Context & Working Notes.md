@@ -112,20 +112,20 @@ Because we run only on a local network security is very simple at this time. We 
 - There is no urgency to this and Owner is not a full time programmer, he has a 40 hour a week Job.
 
 
-##Local Office Network
+## Local Office Network
 - Topology is Peir to Peir connected thru Cat Cabling
 - 1 Windows stores all files
 - 13 Windows User, 1 Mac User, 1 Windows Tablet.
 
 
-##Contacts
+## Contacts
 Owner: Dean dean@example.com (github: newkirkdean-hub)
 Other contributors: NONE
 
-##How to use this file with the assistant
+## How to use this file with the assistant
 When you want me to review/update context, either: 
 • Paste the changed sections into chat; or 
-• Tell me to "Please read CORP2_CONTEXT.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository.
+• Tell me to "Please read KIDSCLUB Migration Context & Working Notes.md in the repo" and include a permalink to the file, or let me fetch it if you ask me to inspect the repository. KIDSCLUB Migration Context & Working Notes.md will also be refered to as "Context.md"
 Keep "Last updated" current so I know which version to use.
 
 ##Next steps (example)
