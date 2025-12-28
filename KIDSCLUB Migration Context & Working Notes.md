@@ -108,4 +108,3 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 1. Fill docs/DATA_DICTIONARY.md with full column lists and row counts.
 2. Create docs/MIGRATION_PLAN.md with per-table migration approach.
 3. Add docs/SECURITY.md with roles and encryption/backups policy.
-<img width="925" height="1666" alt="image" src="https://github.com/user-attachments/assets/0953f8a9-071c-46e9-97e8-906715851ec9" />
