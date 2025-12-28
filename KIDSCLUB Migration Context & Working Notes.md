@@ -79,6 +79,8 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
 
 ## Security & compliance (summary)
 - Because we run only on a local network security is very simple at this time. We only use a valid user number that they type in and if valid in the database then they can use the system. Some users a[...]
+- see EmployeePasswordSecurityImprovments.md
+- https://github.com/newkirkdean-hub/KIDSCLUB/blob/c6a9d288bf025e4c63032cac0744002b9e17f622/EmployeePasswodSecurityImprovments.md
 
 
 ## Migration priorities and constraints
