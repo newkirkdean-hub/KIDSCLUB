@@ -1,31 +1,34 @@
-UCanAccess and Apache Tomcat Integration for KIDSCLUB Migration
+# UCanAccess and Apache Tomcat Integration for KIDSCLUB Migration
 This document outlines how to use the existing JDBC:UCanAccess setup from the KIDSCLUB Java application to simplify the migration process and integrate with Apache Tomcat as a Java web server.
 
-Why Use JDBC:UCanAccess?
+## Why Use JDBC:UCanAccess?
 Code Reuse: Reuse the existing database logic, minimizing the need to rewrite or refactor major parts of the code.
 Driver Familiarity: Leverage the UCanAccess JDBC driver that is already in use, eliminating the learning curve of new technologies.
 Ease of Integration: Fully compatible with Java-based web servers like Tomcat and Spring Boot.
 Recommended Web Servers for UCanAccess
-1. Apache Tomcat
-Why Tomcat?
 
+
+## 1. Apache Tomcat
+Why Tomcat?
 Lightweight and widely adopted for hosting Java Servlets and JSP (JavaServer Pages).
 Easy integration with JDBC tools like UCanAccess.
 Setup Steps:
 
-Deploy your Java application as a .war file within Tomcat.
+## Deploy your Java application as a .war file within Tomcat.
 Add the UCanAccess dependency JAR files (e.g., ucanaccess.jar, jackcess.jar, commons-logging.jar, hsqldb.jar) to your application's WEB-INF/lib folder.
 Use the JDBC URL to establish connections to the Microsoft Access database.
 2. Spring Boot
 Why Spring Boot?
 
-Simplifies creating web applications using built-in Tomcat or Jetty servers.
+## Simplifies creating web applications using built-in Tomcat or Jetty servers.
 Supports dependency management tools like Maven or Gradle for UCanAccess libraries.
 Setup Steps:
 
-Add the necessary UCanAccess libraries as dependencies in your pom.xml (Maven) or build.gradle (Gradle).
+## Add the necessary UCanAccess libraries as dependencies in your pom.xml (Maven) or build.gradle (Gradle).
 Configure database properties in application.properties using the familiar JDBC URL format.
-3. Jetty
+
+
+## 3. Jetty
 Another minimalist alternative for lightweight Java web applications.
 Example of JDBC Connection with UCanAccess
 Here is a sample connection code demonstrating how to access your database:
@@ -38,7 +41,9 @@ ResultSet rs = stmt.executeQuery("SELECT * FROM Members");
 while (rs.next()) {
     System.out.println(rs.getString("MemberName"));
 }
-Example: Java Servlet with Tomcat and UCanAccess
+
+
+## Example: Java Servlet with Tomcat and UCanAccess
 The following is an example of using a Java Servlet to connect to the Access database:
 
 @WebServlet(name = "DatabaseServlet", urlPatterns = "/database")
@@ -65,5 +70,7 @@ public class DatabaseServlet extends HttpServlet {
         }
     }
 }
-Conclusion
+
+
+## Conclusion
 The combination of Apache Tomcat and JDBC:UCanAccess provides a seamless way to migrate KIDSCLUB into a web-based framework while preserving existing database logic. This 
