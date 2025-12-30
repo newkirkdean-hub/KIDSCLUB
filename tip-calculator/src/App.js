@@ -16,13 +16,13 @@ function App() {
 
   // Handle change in total pooled tips
   const handleTotalTipsChange = (e) => {
-    const value = parseFloat(e.target.value) || 0;
+    const value = e.target.value === '' ? 0 : parseFloat(e.target.value) || 0;
     setTotalPooledTips(value);
   };
 
   // Handle change in employee count for a specific role
   const handleEmployeeCountChange = (role, e) => {
-    const value = parseInt(e.target.value) || 0;
+    const value = e.target.value === '' ? 0 : parseInt(e.target.value) || 0;
     setEmployeeCounts({
       ...employeeCounts,
       [role]: value
