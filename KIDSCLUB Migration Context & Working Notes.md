@@ -125,21 +125,21 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
   - `db/schema/copr/README.md`
  
 ## Current progress (what has been accomplished):
-    - Tomcat has been installed and configured on Local test and developement site.
-    - MS Access database has connectivity in the TomCat server and connection pooling.
+    • Tomcat has been installed and configured on Local test and developement site.
+    • MS Access database has connectivity in the TomCat server and connection pooling.
         -DatabaseServlet ( @WebServlet(name = "DatabaseServlet", urlPatterns = {"/dbServlet"}) )
         -Database initializer ( @WebServlet("/initializeDatabase") )
         -App Listener ( @WebListener )
         -web.xml updated with database Resource Reference ( <description>Database Resource Reference</description> <res-ref-name>jdbc/dbServlet</res-ref-name> )
         -context.xml updated with Resource: ( Context <Resource name="jdbc/dbServlet" )
         -context.xml url ( url="jdbc:ucanaccess:///C:/Jar_Files_Local/member_tcat.accdb" /> )
-    -initial index.html is styled and coded:
+    • initial index.html is styled and coded:
         -index.html first checks if the app has already been opened and a main screen has been set in the localStorage.getItem("lastScreen"). if no screen has been stored in localStorage then the index.html loads allowing the user to select the screen they need at the particular computer.
         -index.html currently has three other buttons for database trouble shooting. 
             -DBConnectionPooling - button confirms the database is open and connection pooling is valid.
             -ValidatPathToDatabase (DB) - button confirms the database is reachable and readable.
             -StartDatabse - button opens a JSP that allows the user to press a button to initialize the DB.
-        -screens to choose from, Counter, Cafe, Bridge, Main and TV.
+    • screens to choose from the counter chooser (index.html), Counter, Cafe, Bridge, Main and TV.
         -screens in progress so far:
             -Bridge: 
             -Cafe:
