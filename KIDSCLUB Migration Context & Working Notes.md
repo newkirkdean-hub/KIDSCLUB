@@ -141,9 +141,11 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
             -StartDatabse - button opens a JSP that allows the user to press a button to initialize the DB.
     • screens to choose from the counter chooser (index.html), Counter, Cafe, Bridge, Main and TV.
         -screens in progress so far:
-            -Bridge: 
-            -Cafe:
+            -Bridge: timeclockservlet, vouchers,
+            -Cafe: vouchers, tip_Calulator, 
             -vouchers: (popup)
         -screens completed:
             -tip_Calculator: (popup)
             -passwordModal_include: this is an html page that is included in any page that would need to get a password before proceeding to any other page or script.
+    • password validator: titled: "EmployeePasswordValidationServlet" validates from the database file employee that the employee number has been found then build an employee object that stores the employee in localStorage until the employee if finished with their task.
+    • time clock - titled: BridgeTimeClockServlet, this checks the time clock every 2 minutes for changes to the time clock and updates the timeclock on the bridge screen.
