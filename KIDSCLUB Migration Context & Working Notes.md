@@ -124,28 +124,51 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
   - `db/schema/copr/copr_schema.sql`
   - `db/schema/copr/README.md`
  
-## Current progress (what has been accomplished):
-    • Tomcat has been installed and configured on Local test and developement site.
-    • MS Access database has connectivity in the TomCat server and connection pooling.
-        -DatabaseServlet ( @WebServlet(name = "DatabaseServlet", urlPatterns = {"/dbServlet"}) )
-        -Database initializer ( @WebServlet("/initializeDatabase") )
-        -App Listener ( @WebListener )
-        -web.xml updated with database Resource Reference ( <description>Database Resource Reference</description> <res-ref-name>jdbc/dbServlet</res-ref-name> )
-        -context.xml updated with Resource: ( Context <Resource name="jdbc/dbServlet" )
-        -context.xml url ( url="jdbc:ucanaccess:///C:/Jar_Files_Local/member_tcat.accdb" /> )
-    • initial index.html is styled and coded:
-        -index.html first checks if the app has already been opened and a main screen has been set in the localStorage.getItem("lastScreen"). if no screen has been stored in localStorage then the index.html loads allowing the user to select the screen they need at the particular computer.
-        -index.html currently has three other buttons for database trouble shooting. 
-            -DBConnectionPooling - button confirms the database is open and connection pooling is valid.
-            -ValidatPathToDatabase (DB) - button confirms the database is reachable and readable.
-            -StartDatabse - button opens a JSP that allows the user to press a button to initialize the DB.
-    • screens to choose from the counter chooser (index.html), Counter, Cafe, Bridge, Main and TV.
-        -screens in progress so far:
-            -Bridge: timeclockservlet, vouchers,
-            -Cafe: vouchers, tip_Calulator, 
-            -vouchers: (popup)
-        -screens completed:
-            -tip_Calculator: (popup)
-            -passwordModal_include: this is an html page that is included in any page that would need to get a password before proceeding to any other page or script.
-    • password validator: titled: "EmployeePasswordValidationServlet" validates from the database file employee that the employee number has been found then build an employee object that stores the employee in localStorage until the employee if finished with their task.
-    • time clock - titled: BridgeTimeClockServlet, this checks the time clock every 2 minutes for changes to the time clock and updates the timeclock on the bridge screen.
+## Current Progress
+
+### 1. Server Setup
+- **Tomcat Installation and Configuration**
+  - Installed Tomcat and configured it for the local testing and development environment.
+  - Enabled connection pooling for the Microsoft Access database.
+
+### 2. Database Connectivity
+- **Database Access and Setup**
+  - Configured database servlet:
+    ```java
+    @WebServlet(name = "DatabaseServlet", urlPatterns = {"/dbServlet"})
+    @WebServlet("/initializeDatabase")
+    @WebListener
+    ```
+  - Updated `web.xml` with the following resource reference:
+    ```xml
+    <res-ref-name>jdbc/dbServlet</res-ref-name>
+    ```
+  - Updated `context.xml` with resource:
+    ```xml
+    <Resource name="jdbc/dbServlet" url="jdbc:ucanaccess:///C:/Jar_Files_Local/member_tcat.accdb" />
+    ```
+
+### 3. UI Development
+- **Initial Index Page**
+  - Designed `index.html` to act as a screen chooser for navigation.
+  - Functionality includes:
+    - Checking `localStorage.getItem("lastScreen")` to determine the previous screen.
+    - Buttons for database troubleshooting:
+      - **DBConnectionPooling**: Validates that the database connection pool is active.
+      - **ValidatePathToDatabase**: Confirms that the database is reachable.
+      - **StartDatabase**: Links to a JSP that initializes the database.
+
+### 4. Feature Progress
+- **Completed Screens**
+  - `tip_Calculator` (popup)
+  - `passwordModal_include` (a reusable HTML file for securing sections with employee passwords)
+- **In-Progress Screens**
+  - `Bridge`: Includes `timeclockservlet`, and `vouchers`
+  - `Cafe`: Includes `vouchers`, and `tip_Calculator`
+  - `Vouchers`: Includes a popup interface for voucher management.
+
+- **New Features**
+  - Employee password validator (`EmployeePasswordValidationServlet`)
+    - Authenticates employee numbers from the "employee" database table and constructs an `Employee` object for session handling.
+  - Automated time clock updates:
+    - `BridgeTimeClockServlet` checks changes in the time clock every 2 minutes and updates the bridge screen.
