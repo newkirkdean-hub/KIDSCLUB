@@ -172,3 +172,7 @@ Example, "please read the file Games.FXML in sub-folder GAMES.
     - Authenticates employee numbers from the "employee" database table and constructs an `Employee` object for session handling.
   - Automated time clock updates:
     - `BridgeTimeClockServlet` checks changes in the time clock every 2 minutes and updates the bridge screen.
+  - Folder Location for DB and XML files:
+    -all files now stored on C drive in Kidsclub_Web/
+    -first folder is /xml (useing docBase in server.xml, connector is listening on Port 8085 )
+    -<Context docBase="C:/Kidsclub_Web/XML" path="/xml" crossContext="true" />
