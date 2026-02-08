@@ -21,3 +21,104 @@
 ## System Architecture Overview
 
 The Kidsclub printing system uses a **client-side printing architecture** where each workstation runs a local Java print agent. This approach is ideal for local network environments.
+
+
+
+---
+
+## Technology Stack
+
+### Server-Side (Tomcat)
+- **Apache Tomcat** - Web server
+- **JSP (JavaServer Pages)** - User interface
+- **Servlet API** - Request handling
+- **JDBC** - Database connectivity (optional)
+- **Gson** - JSON serialization
+
+### Client-Side (Workstation)
+- **Java SE 11+** - Runtime environment
+- **escpos-coffee.jar** - ESC/POS printer formatting
+- **com.sun.net.httpserver** - Built-in HTTP server
+- **Gson** - JSON parsing
+- **Java Print Service API** - Printer communication
+
+---
+
+## Component Breakdown
+
+### 1. printVoucher.jsp
+**Location:** `/webapp/printVoucher.jsp` (Tomcat Server)
+
+**Purpose:** 
+- User interface for entering or selecting voucher data
+- Sends print request to servlet (optional)
+- Communicates with local print agent via JavaScript
+
+**Key Features:**
+- HTML form for voucher data entry
+- JavaScript fetch API for HTTP communication
+- Error handling and user feedback
+- AJAX calls to both servlet and print agent
+
+**Called By:** User in web browser
+
+**Calls:** 
+- `VoucherServlet.java` (to get data)
+- `http://localhost:9100/printVoucher` (to print)
+
+---
+
+### 2. VoucherServlet.java
+**Location:** `/src/main/java/com/yourcompany/servlet/VoucherServlet.java` (Tomcat Server)
+
+**Purpose:**
+- Receives voucher request from JSP
+- Queries database for employee/voucher details
+- Enriches data (company info, calculations)
+- Returns complete JSON to JSP
+
+**Key Features:**
+- Database connectivity
+- Data validation
+- JSON response generation
+- Error handling
+
+**Called By:** `printVoucher.jsp`
+
+**Calls:** Database layer
+
+**Note:** This component is **optional** if voucher data is entered manually in JSP without database lookup.
+
+---
+
+### 3. LocalPrintAgent.java
+**Location:** Client Workstation (Standalone Java Application)
+
+**Purpose:**
+- HTTP server listening on `localhost:9100`
+- Receives JSON voucher data
+- Routes to printing method
+- Manages printer connection
+
+**Key Features:**
+- Lightweight HTTP server
+- JSON parsing
+- CORS headers for local development
+- Error handling and logging
+
+**Called By:** JavaScript in `printVoucher.jsp`
+
+**Calls:** `VoucherPrinter.printEscPosVoucher()`
+
+**Dependencies:**
+```xml
+<dependency>
+    <groupId>com.github.anastaciocintra</groupId>
+    <artifactId>escpos-coffee</artifactId>
+    <version>4.1.0</version>
+</dependency>
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
