@@ -26,6 +26,9 @@ The Kidsclub printing system uses a **client-side printing architecture** where 
 
 ---
 
+
+---
+
 ## Technology Stack
 
 ### Server-Side (Tomcat)
@@ -37,6 +40,7 @@ The Kidsclub printing system uses a **client-side printing architecture** where 
 
 ### Client-Side (Workstation)
 - **Java SE 11+** - Runtime environment
+- **Java AWT/Swing** - System tray UI
 - **escpos-coffee.jar** - ESC/POS printer formatting
 - **com.sun.net.httpserver** - Built-in HTTP server
 - **Gson** - JSON parsing
@@ -91,24 +95,39 @@ The Kidsclub printing system uses a **client-side printing architecture** where 
 
 ---
 
-### 3. LocalPrintAgent.java
-**Location:** Client Workstation (Standalone Java Application)
+### 3. PrintServiceTrayApp.java
+**Location:** Client Workstation (System Tray Application)
 
 **Purpose:**
+- **Main application** that runs in system tray
 - HTTP server listening on `localhost:9100`
 - Receives JSON voucher data
 - Routes to printing method
-- Manages printer connection
+- Provides user interface for monitoring and testing
 
 **Key Features:**
-- Lightweight HTTP server
+- System tray icon with right-click menu
+- Visual status indicator (running/stopped/error)
+- Built-in HTTP server for receiving print requests
 - JSON parsing
+- User-friendly status checking
+- Test print functionality
+- Auto-start capability
 - CORS headers for local development
 - Error handling and logging
+- Notification messages for print status
 
-**Called By:** JavaScript in `printVoucher.jsp`
+**User Interface:**
+**Called By:** 
+- Started automatically on Windows login (when configured)
+- JavaScript in `printVoucher.jsp` sends HTTP requests
 
-**Calls:** `VoucherPrinter.printEscPosVoucher()`
+**Calls:** `ReceiptRouter.route()`
+
+**Runs As:** 
+- Background system tray application
+- Auto-starts with Windows (optional)
+- Always visible in system tray for easy access
 
 **Dependencies:**
 ```xml
