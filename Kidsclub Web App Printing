@@ -1,0 +1,23 @@
+# Kidsclub Web App Printing System Documentation
+
+**Date Created:** 2026-02-08  
+**Author:** newkirkdean-hub  
+**Purpose:** Reference documentation for the client-side printing architecture using escpos-coffee.jar
+
+---
+
+## Table of Contents
+1. [System Architecture Overview](#system-architecture-overview)
+2. [Technology Stack](#technology-stack)
+3. [Component Breakdown](#component-breakdown)
+4. [Data Flow](#data-flow)
+5. [File Structure](#file-structure)
+6. [Deployment Guide](#deployment-guide)
+7. [Configuration](#configuration)
+8. [Troubleshooting](#troubleshooting)
+
+---
+
+## System Architecture Overview
+
+The Kidsclub printing system uses a **client-side printing architecture** where each workstation runs a local Java print agent. This approach is ideal for local network environments.
